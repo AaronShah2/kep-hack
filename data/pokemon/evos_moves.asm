@@ -946,6 +946,7 @@ MankeyEvosMoves:
 ; Learnset
 	db 9, LOW_KICK
 	db 15, KARATE_CHOP
+	db 17, RAGE_FIST
 	db 21, FURY_SWIPES
 	db 27, FOCUS_ENERGY
 	db 33, SEISMIC_TOSS

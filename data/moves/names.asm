@@ -184,5 +184,6 @@ MoveNames:: ; 12chr limit
 	li "KOWTOWCLEAVE"
 	li "DISARMVOICE"
 	li "NASTY PLOT"
+	li "RAGE FIST"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS
