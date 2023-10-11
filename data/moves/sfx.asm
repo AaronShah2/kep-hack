@@ -185,7 +185,7 @@ MoveSoundTable:
 	db SFX_NOT_VERY_EFFECTIVE, $11, $ff ; KOWTOW_CLEAVE
 	db SFX_BATTLE_37,          $10, $60 ; DISARMING_VOICE
 	db SFX_BATTLE_09,          $e8, $10 ; NASTY_PLOT
-	db SFX_BATTLE_09,          $00, $40 ; RAGE_FIST
+	db SFX_BATTLE_09,          $f8, $40 ; RAGE_FIST
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 
