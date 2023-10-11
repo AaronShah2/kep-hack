@@ -184,6 +184,7 @@ AttackAnimationPointers:
 	dw KowtowCleaveAnim
 	dw DisarmingVoiceAnim
 	dw NastyPlotAnim
+	dw RageFistAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -1088,6 +1089,7 @@ BubbleAnim:
 	battle_anim BUBBLE, SUBANIM_0_WATER_BUBBLES, 0, 22
 	db -1 ; end
 
+RageFistAnim:
 DizzyPunchAnim:
 	battle_anim DIZZY_PUNCH, SUBANIM_0_BIRDIES_CIRCLING_ENEMY, 0, 6
 	battle_anim DIZZY_PUNCH, SUBANIM_0_BIRDIES_CIRCLING_ENEMY, 0, 6

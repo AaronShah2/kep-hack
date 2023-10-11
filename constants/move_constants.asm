@@ -190,7 +190,8 @@
 	const KOWTOW_CLEAVE ; b6
 	const DISARMING_VOICE ; b7
 	const NASTY_PLOT   ; b8
-	const STRUGGLE     ; formerly a5, now b9
+	const RAGE_FIST	   ; b9?
+	const STRUGGLE     ; formerly a5, now b10?
 DEF NUM_ATTACKS EQU const_value - 1
 
 	; Moves do double duty as animation identifiers.
