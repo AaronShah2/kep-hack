@@ -193,8 +193,10 @@ Moves:
 	move FAKE_TEARS,   SPECIAL_DOWN2_EFFECT,		 0, DARK,		  100, 20
 	move FALSE_SURRENDER, SWIFT_EFFECT,             80, DARK,         100, 10 ; figure out the actual name another time
 	move KOWTOW_CLEAVE,   SWIFT_EFFECT,             85, DARK,         100, 10
-	move DISARMING_VOICE, SWIFT_EFFECT,             40, FAIRY,        100, 10
+	move DISARMING_VOICE, SWIFT_EFFECT,             40, FAIRY,        100, 15
 	move NASTY_PLOT,      SPECIAL_UP2_EFFECT,        0, DARK,         100, 10
 	move RAGE_FIST,	      RAGE_EFFECT,				50, GHOST,	  	  100, 20
+	move UPPERCUT,     FLINCH_SIDE_EFFECT2,         55, FIGHTING,      80, 15
+	move POWDER_SNOW,     FREEZE_SIDE_EFFECT,         40, ICE,      100, 25
 	move STRUGGLE,        RECOIL_EFFECT,            50, NORMAL,       100, 10
 	assert_table_length NUM_ATTACKS

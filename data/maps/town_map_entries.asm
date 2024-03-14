@@ -67,7 +67,7 @@ InternalMapEntries:
 	internal_map MT_MOON_B2F,                    6,  2, MountMoonName
 	internal_map CERULEAN_MART,                 10,  2, CeruleanCityName
 	internal_map MT_MOON_POKECENTER,             5,  2, Route4Name
-	internal_map VIRIDIAN_PRE_GYM,              10,  2, ViridianCityName
+	internal_map VIRIDIAN_PRE_GYM,               2,  8, ViridianCityName
 	internal_map DAYCARE,                       10,  4, Route5Name
 	internal_map UNDERGROUND_PATH_ROUTE_6,      10,  8, Route6Name
 	internal_map CELESTE_HILL,                   7,  9, CelesteHillName
@@ -83,6 +83,7 @@ InternalMapEntries:
 	internal_map SS_ANNE_B1F_ROOMS,              9, 10, SSAnneName
 	internal_map SILPH_GAUNTLET_3F,             10,  5, SilphCoName
 	internal_map VICTORY_ROAD_1F,                0,  4, VictoryRoadName
+	internal_map BRUNSWICK_GROTTO,               6, 10, BrunswickGladeName
 	internal_map SILPH_GAUNTLET_7F,             10,  5, SilphCoName
 	internal_map LANCES_ROOM,                    0,  2, PokemonLeagueName
 	internal_map FARAWAY_ISLAND_INSIDE,         15, 15, FarawayIslandName
@@ -95,7 +96,8 @@ InternalMapEntries:
 	internal_map CELADON_HOTEL,                  7,  5, CeladonCityName
 	internal_map LAVENDER_POKECENTER,           14,  5, LavenderTownName
 	internal_map POKEMON_TOWER_2F,              15,  5, PokemonTowerName
-	internal_map BRUNSWICK_GROTTO,               6, 10, BrunswickGladeName
+	internal_map SILPH_GAUNTLET_4F,             10,  5, SilphCoName
+	internal_map CELESTE_HILL_GATE,              7,  9, CelesteHillName
 	internal_map POKEMON_TOWER_7F,              15,  5, PokemonTowerName
 	internal_map LAVENDER_CUBONE_HOUSE,         14,  5, LavenderTownName
 	internal_map WARDENS_HOUSE,                  8, 13, FuchsiaCityName
@@ -133,7 +135,9 @@ InternalMapEntries:
 	internal_map NAME_RATERS_HOUSE,             14,  5, LavenderTownName
 	internal_map CERULEAN_BADGE_HOUSE,          10,  2, CeruleanCityName
 	internal_map CINNABAR_VOLCANO_FLOORS,        3, 14, CinnabarVolcanoName
-	internal_map SILPH_CO_ELEVATOR,             10,  5, SilphCoName
+	internal_map ROUTE_10_GATE,                 14,  4, Route10Name
+	internal_map SILPH_CO_11F,                  10,  5, SilphCoName
+	internal_map FARAWAY_FERRY_DOCK,            15, 15, FarawayIslandName
 	internal_map GARNET_CAVERN_2F,               6, 10, GarnetCavernName
 	internal_map UNDERWATER_TUNNEL,             14,  1, UnderwaterTunnelName
 	internal_map CELADON_UNIVERSITY_POKECENTER,  7,  4, CeladonUniversityName

@@ -113,19 +113,19 @@ _SilphCo7AfterBattleText2::
 	done
 
 _SilphCo7BattleText3::
-	text "I am one of the 4"
-	line "ROCKET BROTHERS!"
+	text "TEAM ROCKET has"
+	line "taken command of"
+	cont "SILPH CO.!"
 	done
 
 _SilphCo7EndBattleText3::
-	text "Aack!"
-	line "Brothers, I lost!"
+	text "Arrgh!"
 	prompt
 
 _SilphCo7AfterBattleText3::
-	text "Doesn't matter."
-	line "My brothers will"
-	cont "repay the favor!"
+	text "Fwahahaha!"
+	line "My BOSS has been"
+	cont "after this place!"
 	done
 
 _SilphCo7BattleText4::
@@ -169,7 +169,8 @@ _SilphCo7Text_51ec3::
 _SilphCo7Text_51ec8::
 	text "Oh ho!"
 	line "So, you are ready"
-	cont "for BOSS ROCKET!"
+	cont "for the TEAM"
+	cont "ROCKET BOSS!"
 	prompt
 
 _SilphCo7Text_51ecd::

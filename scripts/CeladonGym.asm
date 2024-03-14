@@ -118,6 +118,7 @@ ErikaText:
 	ld c, BANK(Music_MeetMaleTrainer)
 	ld a, MUSIC_MEET_MALE_TRAINER
 	call PlayMusic
+	ld hl, wd72d
 	set 6, [hl]
 	set 7, [hl]
 	ldh a, [hSpriteIndex]
@@ -183,6 +184,8 @@ ErikaPreBattleText:
 
 ReceivedRainbowBadgeText:
 	text_far _ReceivedRainbowBadgeText
+	sound_get_key_item
+	text_promptbutton
 	text_end
 
 ErikaPostBattleAdviceText:

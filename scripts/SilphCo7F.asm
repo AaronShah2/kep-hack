@@ -310,7 +310,7 @@ SilphCo7Text1:
 ; lapras guy
 	text_asm
 	ld a, [wd72e]
-	bit 0, a ; got lapras?
+	bit 0, a
 	jr z, .givelapras
 	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
 	jr nz, .savedsilph

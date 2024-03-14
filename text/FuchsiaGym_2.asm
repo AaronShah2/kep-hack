@@ -115,7 +115,7 @@ _FuchsiaGymBattleText4::
 
 _FuchsiaGymEndBattleText4::
 	text "Whoa!"
-	line "He's got it!"
+	line "You've got it!"
 	prompt
 
 _FuchsiaGymAfterBattleText4::
@@ -172,7 +172,7 @@ _FuchsiaGymAfterBattleText6::
 
 _FuchsiaGymGuidePreBattleText::
 	text "Yo! Champ in"
-	line "making!"
+	line "the making!"
 
 	para "FUCHSIA GYM is"
 	line "riddled with"

@@ -123,11 +123,6 @@ _VermilionCityText13::
 	text "VERMILION HARBOR"
 	done
 
-_VermilionCityText15::
-	text "The S.S.ANNE"
-	line "has returned!"
-	done
-
 _BeautyText1::
 	text "Hey! Do you like"
 	line "cats or dogs?"
@@ -141,7 +136,7 @@ _BeautyText2::
 	prompt ; needed for text to scroll correctly - it looks and acts fine in-game, don't worry.
 
 _BeautyChoice:: ; this is separate for the in-progress event.
-	text "If you catch 5"
+	text "If you catch 5 new"
 	line "@"
 	text_ram wcd6d ; efficiency - means we don't need two separate texts...
 	text ", I'll"
@@ -219,6 +214,11 @@ _OfficerJennyText3::
 	text "OK! Please treat"
 	line "SQUIRTLE right!@"
 	text_end
+
+_JennyFullParty::
+	text "Your PARTY is"
+	line "full, though!"
+	done
 
 _OfficerJennyText4::
 	text "Oh... What am I"

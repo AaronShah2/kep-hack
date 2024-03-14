@@ -1,4 +1,5 @@
 ViridianGym_Script:
+	call ViridianGymDoorCallbackScript
 	ld hl, .CityName
 	ld de, .LeaderName
 	call LoadGymLeaderAndCityName
@@ -14,7 +15,23 @@ ViridianGym_Script:
 	db "VIRIDIAN CITY@"
 
 .LeaderName:
-	db "GIOVANNI@"
+	db "????????@"
+
+ViridianGymDoorCallbackScript:
+	ld hl, wCurrentMapScriptFlags
+	bit 5, [hl]
+	res 5, [hl]
+	ret z
+	CheckEvent EVENT_GIOVANNIS_ROOM_DOOR_UNLOCKED
+	jr z, .blockExitToNextRoom
+	ld a, $5
+	jp .setExitBlock
+.blockExitToNextRoom
+	ld a, $24
+.setExitBlock
+	ld [wNewTileBlockID], a
+	lb bc, 0, 1
+	predef_jump ReplaceTileBlock
 
 ViridianGymResetScripts:
 	xor a
@@ -29,6 +46,7 @@ ViridianGym_ScriptPointers:
 	dw EndTrainerBattle
 	dw ViridianGymGiovanniPostBattle
 	dw ViridianGymScript4
+	dw ViridianGymOpenTheDoor
 
 ViridianGymScript0:
 	ld a, [wYCoord]
@@ -161,6 +179,15 @@ ViridianGymReceiveTM27:
 	SetEvents EVENT_2ND_ROUTE22_RIVAL_BATTLE, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	jp ViridianGymResetScripts
 
+ViridianGymOpenTheDoor:
+	ld a, SFX_GO_INSIDE
+	call PlaySound
+	SetEvent EVENT_GIOVANNIS_ROOM_DOOR_UNLOCKED
+	ld a, $5
+	ld [wNewTileBlockID], a
+	lb bc, 0, 1
+	predef_jump ReplaceTileBlock
+
 ViridianGym_TextPointers:
 	dw GiovanniText
 	dw ViridianGymTrainerText1
@@ -217,6 +244,7 @@ GiovanniText:
 	predef HideObject
 	call UpdateSprites
 	call Delay3
+	call ViridianGymOpenTheDoor
 	call GBFadeInFromBlack
 	jr .done
 .beforeBeat
@@ -235,8 +263,6 @@ GiovanniText:
 	ld [wSpriteIndex], a
 	call EngageMapTrainer
 	call InitBattleEnemyParameters ; giovanni is deliberately not scaled as he is always fought last
-	ld a, $8
-	ld [wGymLeaderNo], a
 	ld a, $3
 	ld [wViridianGymCurScript], a
 .done
@@ -248,7 +274,8 @@ GiovanniPreBattleText:
 
 ReceivedEarthBadgeText:
 	text_far _ReceivedEarthBadgeText
-	sound_level_up ; probably supposed to play SFX_GET_ITEM_1 but the wrong music bank is loaded
+	sound_get_key_item
+	text_promptbutton
 	text_end
 
 GiovanniPostBattleAdviceText:

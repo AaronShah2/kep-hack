@@ -115,7 +115,7 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw VictoryRoad1FHS
-	dw NoHS
+	dw BrunswickGrottoHS
 	dw NoHS
 	dw NoHS
 	dw NoHS
@@ -136,7 +136,7 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw NoHS
-	dw NoHS
+	dw CeladonMansion3FHS
 	dw NoHS
 	dw CeladonMansionRoofHouseHS
 	dw NoHS
@@ -150,8 +150,8 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw PokemonTower2FHS
-	dw BrunswickGrottoHS
-	dw NoHS ; Pokemon Tower 4F, removed for constant space
+	dw NoHS
+	dw NoHS
 	dw PokemonTower5FHS
 	dw PokemonTower6FHS
 	dw PokemonTower7FHS
@@ -218,7 +218,6 @@ MapHSPointers:
 	dw SilphCo5FHS
 	dw NoHS
 	dw SilphCo7FHS
-	;dw SilphCo8FHS
 	dw PokemonMansion2FHS
 	dw PokemonMansion3FHS
 	dw PokemonMansionB1FHS
@@ -237,9 +236,8 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw CinnabarVolcanoHS
+	dw CinnabarVolcanoFloorsHS
 	dw NoHS
-	dw NoHS
-	dw SilphCo10FHS
 	dw SilphCo11FHS
 	dw NoHS
 	dw NoHS
@@ -253,11 +251,11 @@ MapHSPointers:
 	dw NoHS
 	dw RockTunnelB1FHS
 	dw GiovannisRoomHS
-	dw NoHS ; Battle Tent
-	dw MtMoonSquareHS ; Mt Moon Square
-	dw NoHS ; Mt Moon Square House
-	dw NoHS ; Celeste Hill Cave 
-	dw NoHS ; Celeste Hill Outside
+	dw NoHS
+	dw MtMoonSquareHS
+	dw NoHS
+	dw NoHS 
+	dw NoHS
 	dw BrunswickGladeHS
 	assert_table_length NUM_MAPS
 	dw -1 ; end
@@ -330,7 +328,8 @@ Route25HS:
 	db ROUTE_25, $0A, SHOW                    ; HS_ROUTE_25_ITEM
 BrunswickTrailHS:
 	db BRUNSWICK_TRAIL, $01, SHOW             ; HS_CACTUS
-	db BRUNSWICK_TRAIL, $06, SHOW 		 	  ; HS_BRUNSWICK_ZAPDOS_G_1
+	db BRUNSWICK_TRAIL, $06, SHOW             ; HS_BRUNSWICK_ZAPDOS_G_1
+	db BRUNSWICK_TRAIL, $09, SHOW			  ; HS_BRUNSWICK_TRAIL_ITEM1
 BluesHouseHS:
 	db BLUES_HOUSE, $01, SHOW                 ; HS_DAISY_SITTING
 	db BLUES_HOUSE, $02, HIDE                 ; HS_DAISY_WALKING
@@ -359,12 +358,6 @@ PokemonTower2FHS:
 	db POKEMON_TOWER_2F, $01, SHOW            ; HS_POKEMON_TOWER_2F_RIVAL
 BrunswickGrottoHS:
 	db BRUNSWICK_GROTTO, $01, HIDE            ; HS_BRUNSWICK_ZAPDOS_G_2
-;PokemonTower3FHS:
-;	db POKEMON_TOWER_3F, $04, SHOW            ; HS_POKEMON_TOWER_3F_ITEM
-;PokemonTower4FHS:
-;	db POKEMON_TOWER_4F, $04, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_1
-;	db POKEMON_TOWER_4F, $05, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_2
-;	db POKEMON_TOWER_4F, $06, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_3
 PokemonTower5FHS:
 	db POKEMON_TOWER_5F, $06, SHOW            ; HS_POKEMON_TOWER_5F_ITEM
 PokemonTower6FHS:
@@ -375,7 +368,9 @@ PokemonTower7FHS:
 	db POKEMON_TOWER_7F, $02, HIDE            ; HS_POKEMON_TOWER_7F_JAMES
 	db POKEMON_TOWER_7F, $03, SHOW            ; HS_POKEMON_TOWER_7F_MR_FUJI
 MrFujisHouseHS:
-	db MR_FUJIS_HOUSE, $05, HIDE              ; HS_MR_FUJIS_HOUSE_MR_FUJI
+	db MR_FUJIS_HOUSE, $05, HIDE              ; HS_MR_FUJIS_HOUSE_MR_FUJI#
+CeladonMansion3FHS:
+	db CELADON_MANSION_3F, $05, HIDE		  ; HS_MORIMOTO
 CeladonMansionRoofHouseHS:
 	db CELADON_MANSION_ROOF_HOUSE, $02, SHOW  ; HS_CELADON_MANSION_EEVEE_GIFT
 GameCornerHS:
@@ -481,13 +476,6 @@ SilphCo3FHS:
 	db SILPH_CO_3F, $02, SHOW                 ; HS_SILPH_CO_3F_1
 	db SILPH_CO_3F, $03, SHOW                 ; HS_SILPH_CO_3F_2
 	db SILPH_CO_3F, $04, SHOW                 ; HS_SILPH_CO_3F_ITEM
-;SilphCo4FHS:
-;	db SILPH_CO_4F, $02, SHOW                 ; HS_SILPH_CO_4F_1
-;	db SILPH_CO_4F, $03, SHOW                 ; HS_SILPH_CO_4F_2
-;	db SILPH_CO_4F, $04, SHOW                 ; HS_SILPH_CO_4F_3
-;	db SILPH_CO_4F, $05, SHOW                 ; HS_SILPH_CO_4F_ITEM_1
-;	db SILPH_CO_4F, $06, SHOW                 ; HS_SILPH_CO_4F_ITEM_2
-;	db SILPH_CO_4F, $07, SHOW                 ; HS_SILPH_CO_4F_ITEM_3
 SilphCo5FHS:
 	db SILPH_CO_5F, $02, SHOW                 ; HS_SILPH_CO_5F_1
 	db SILPH_CO_5F, $03, SHOW                 ; HS_SILPH_CO_5F_2
@@ -496,12 +484,6 @@ SilphCo5FHS:
 	db SILPH_CO_5F, $06, SHOW                 ; HS_SILPH_CO_5F_ITEM_1
 	db SILPH_CO_5F, $07, SHOW                 ; HS_SILPH_CO_5F_ITEM_2
 	db SILPH_CO_5F, $08, SHOW                 ; HS_SILPH_CO_5F_ITEM_3
-;SilphCo6FHS:
-;	db SILPH_CO_6F, $06, SHOW                 ; HS_SILPH_CO_6F_1
-;	db SILPH_CO_6F, $07, SHOW                 ; HS_SILPH_CO_6F_2
-;	db SILPH_CO_6F, $08, SHOW                 ; HS_SILPH_CO_6F_3
-;	db SILPH_CO_6F, $09, SHOW                 ; HS_SILPH_CO_6F_ITEM_1
-;	db SILPH_CO_6F, $0A, SHOW                 ; HS_SILPH_CO_6F_ITEM_2
 SilphCo7FHS:
 	db SILPH_CO_7F, $05, SHOW                 ; HS_SILPH_CO_7F_1
 	db SILPH_CO_7F, $06, SHOW                 ; HS_SILPH_CO_7F_2
@@ -510,12 +492,6 @@ SilphCo7FHS:
 	db SILPH_CO_7F, $09, SHOW                 ; HS_SILPH_CO_7F_RIVAL
 	db SILPH_CO_7F, $0A, SHOW                 ; HS_SILPH_CO_7F_ITEM_1
 	db SILPH_CO_7F, $0B, SHOW                 ; HS_SILPH_CO_7F_ITEM_2
-SilphCo10FHS:
-	db SILPH_CO_10F, $01, SHOW                ; HS_SILPH_CO_10F_1
-	db SILPH_CO_10F, $02, SHOW                ; HS_SILPH_CO_10F_2
-	db SILPH_CO_10F, $03, SHOW                ; HS_SILPH_CO_10F_3
-	db SILPH_CO_10F, $04, SHOW                ; HS_SILPH_CO_10F_ITEM_1
-	db SILPH_CO_10F, $05, SHOW                ; HS_SILPH_CO_10F_ITEM_2
 SilphCo11FHS:
 	db SILPH_CO_11F, $03, SHOW                ; Giovanni
 	db SILPH_CO_11F, $04, SHOW                ; James
@@ -594,6 +570,7 @@ MtMoonCraterHS:
 	db MT_MOON_CRATER, $01, SHOW              ; HS_MT_MOON_CRATER_ITEM_1
 	db MT_MOON_CRATER, $02, SHOW              ; HS_MT_MOON_CRATER_ITEM_2
 	db MT_MOON_CRATER, $03, SHOW              ; HS_MT_MOON_CRATER_ITEM_3
+	db MT_MOON_CRATER, $04, SHOW              ; HS_MT_MOON_CRATER_ITEM_4
 GiovannisRoomHS:
 	db GIOVANNIS_ROOM, $05, SHOW              ; HS_GIOVANNIS_ROOM_ITEM_1
 	db GIOVANNIS_ROOM, $06, SHOW              ; HS_GIOVANNIS_ROOM_ITEM_2
@@ -607,7 +584,13 @@ MtMoonSquareHS:
 DaycareHS:
 	db DAYCARE, $03, SHOW                     ; HS_DAYCARE_BULBASAUR
 BrunswickGladeHS:
-	db BRUNSWICK_GLADE, $01, HIDE            ; HS_GLADE_GZAP_1
-	db BRUNSWICK_GLADE, $02, HIDE            ; HS_GLADE_GZAP_2
-	db BRUNSWICK_GLADE, $03, HIDE            ; HS_GLADE_GZAP_3
+	db BRUNSWICK_GLADE, $05, HIDE            ; HS_GLADE_GZAP_1
+	db BRUNSWICK_GLADE, $06, HIDE            ; HS_GLADE_GZAP_2
+	db BRUNSWICK_GLADE, $07, HIDE            ; HS_GLADE_GZAP_3
+	db BRUNSWICK_GLADE, $08, SHOW            ; HS_GLADE_ITEM1
+	db BRUNSWICK_GLADE, $09, SHOW            ; HS_GLADE_ITEM2
+	db BRUNSWICK_GLADE, $0A, SHOW            ; HS_GLADE_ITEM3
+	db BRUNSWICK_GLADE, $0B, SHOW            ; HS_GLADE_ITEM4
+CinnabarVolcanoFloorsHS:
+	db CINNABAR_VOLCANO_FLOORS, $05, SHOW
 	assert_table_length NUM_HS_OBJECTS

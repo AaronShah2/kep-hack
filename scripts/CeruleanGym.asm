@@ -43,14 +43,14 @@ CeruleanGymMistyPostBattle:
 	ld [wJoyIgnore], a
 
 CeruleanGymReceiveTM11:
-	ld a, $7
+	ld a, $6
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
 	SetEvent EVENT_BEAT_MISTY
 	lb bc, TM_BUBBLEBEAM, 1
 	call GiveItem
 	jr nc, .BagFull
-	ld a, $6
+	ld a, $7
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
 	SetEvent EVENT_GOT_TM11
@@ -107,6 +107,7 @@ MistyText:
 	ld c, BANK(Music_MeetMaleTrainer)
 	ld a, MUSIC_MEET_MALE_TRAINER
 	call PlayMusic
+	ld hl, wd72d
 	set 6, [hl]
 	set 7, [hl]
 	ldh a, [hSpriteIndex]
@@ -190,7 +191,7 @@ TM11NoRoomText:
 
 ReceivedCascadeBadgeText:
 	text_far _ReceivedCascadeBadgeText
-	sound_get_key_item ; actually plays the second channel of SFX_BALL_POOF due to the wrong music bank being loaded
+	sound_get_key_item
 	text_promptbutton
 	text_end
 

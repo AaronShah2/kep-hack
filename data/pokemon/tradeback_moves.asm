@@ -73,7 +73,7 @@ TradebackMovesPointerTable:
 	dw DragoniteTradebackMoves
 	dw CactormusTradebackMoves
 	dw SharpoonTradebackMoves
-	dw WiglettTradebackMoves
+	dw BittybatTradebackMoves
 	dw DoduoTradebackMoves
 	dw PoliwagTradebackMoves
 	dw JynxTradebackMoves
@@ -144,7 +144,7 @@ TradebackMovesPointerTable:
 	dw DecillaTradebackMoves
 	dw KinglerTradebackMoves
 	dw CloysterTradebackMoves
-	dw WugtrioTradebackMoves
+	dw MagnetiteTradebackMoves
 	dw ElectrodeTradebackMoves
 	dw ClefableTradebackMoves
 	dw WeezingTradebackMoves
@@ -195,6 +195,8 @@ TradebackMovesPointerTable:
 	dw BellsproutTradebackMoves
 	dw WeepinbellTradebackMoves
 	dw VictreebelTradebackMoves
+	dw WiglettTradebackMoves
+	dw WugtrioTradebackMoves
 	dw ScizorTradebackMoves
 	dw RhyperiorTradebackMoves
 	dw EspeonTradebackMoves
@@ -253,6 +255,7 @@ TradebackMovesPointerTable:
 	dw TaurosPTradebackMoves
 	dw TaurosPATradebackMoves
 	dw TaurosPBTradebackMoves
+	dw GorillaimoTradebackMoves
 	dw FossilKabutopsTradebackMoves
 	dw FossilAerodactylTradebackMoves
 	dw MonGhostTradebackMoves
@@ -813,6 +816,7 @@ DragoniteTradebackMoves:
 	db 1, LIGHT_SCREEN
 	db 1, MIST
 	db 1, SUPERSONIC
+        db 1, FLY
 	db 1, HYDRO_PUMP
 	db 0
 
@@ -831,9 +835,9 @@ SharpoonTradebackMoves:
 	db 1, AGILITY ; Egg Move
 	db 0
 
-;BittybatTradebackMoves:
-;	db 1, QUICK_ATTACK
-;	db 0
+BittybatTradebackMoves:
+	db 1, QUICK_ATTACK
+	db 0
 
 DoduoTradebackMoves:
 	db 1, SWIFT
@@ -906,6 +910,7 @@ CheepTradebackMoves:
 	db 1, WING_ATTACK ; Egg Move (from Sato?)
 	db 1, AURORA_BEAM ; Egg Move
 	db 1, AGILITY ; Egg Move
+	db 1, MEDITATE ; Egg Move
 	db 0
 
 JabettaTradebackMoves:
@@ -917,6 +922,7 @@ JabettaTradebackMoves:
 	db 1, WING_ATTACK ; Egg Move (from Sato?)
 	db 1, AURORA_BEAM ; Egg Move
 	db 1, AGILITY ; Egg Move
+	db 1, MEDITATE ; Egg Move
 	db 0
 
 VulpiiiTradebackMoves:
@@ -1322,8 +1328,6 @@ MewtwoTradebackMoves:
 	db 1, THUNDERPUNCH
 	db 1, HEADBUTT
 	db 1, FLAMETHROWER
-	db 1, WATERFALL
-	db 1, ROAR
 	db 0
 
 SnorlaxTradebackMoves:
@@ -1393,9 +1397,9 @@ CloysterTradebackMoves:
 	db 1, SCREECH
 	db 0
 
-;MagnetiteTradebackMoves:
-;	db 1, AGILITY
-;	db 0
+MagnetiteTradebackMoves:
+	db 1, AGILITY
+	db 0
 
 ElectrodeTradebackMoves:
 	db 1, HEADBUTT
@@ -1797,14 +1801,6 @@ VictreebelTradebackMoves:
 	db 1, LEECH_LIFE
 	db 0
 
-;MonjaTradebackMoves:
-;	db 1, FLASH
-;	db 1, HEADBUTT
-;	db 1, AMNESIA
-;	db 1, CONFUSION
-;	db 1, REFLECT
-;	db 0
-
 ScizorTradebackMoves:
 	db 1, HEADBUTT
 	db 1, COUNTER
@@ -1829,6 +1825,7 @@ EspeonTradebackMoves:
 	db 0
 	
 UmbreonTradebackMoves:
+	db 1, PSYCHIC_M
 	db 1, HEADBUTT
 	db 1, GROWTH
 	db 1, ROAR
@@ -2055,7 +2052,6 @@ MrRimeTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, DREAM_EATER ; TM
 	db 1, THUNDERPUNCH ; TM
-	db 1, FIRE_PUNCH ; TM
 	db 1, ICE_PUNCH ; TM
 	db 1, HYPNOSIS ; Egg Move
 	db 1, PSYBEAM ; Egg Move
@@ -2224,7 +2220,14 @@ TaurosPBTradebackMoves:
 	db 1, FLAMETHROWER
 	db 1, QUICK_ATTACK
 	db 0
-	
+
+GorillaimoTradebackMoves:
+    db 1, HEADBUTT,
+    db 1, DEFENSE_CURL
+    db 1, KARATE_CHOP
+    db 1, FOCUS_ENERGY
+    db 0
+
 FossilKabutopsTradebackMoves:
 	db 0
 

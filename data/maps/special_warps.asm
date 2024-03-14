@@ -14,6 +14,7 @@ DungeonWarpList:
 	db POKEMON_MANSION_1F,  1
 	db POKEMON_MANSION_1F,  2
 	db POKEMON_MANSION_2F,  3
+	db MT_MOON_CRATER,      1
 	db -1 ; end
 
 
@@ -36,6 +37,7 @@ DungeonWarpData:
 	fly_warp POKEMON_MANSION_1F,  16, 14
 	fly_warp POKEMON_MANSION_1F,  16, 14
 	fly_warp POKEMON_MANSION_2F,  18, 14
+	fly_warp MT_MOON_CRATER,      21, 46
 
 
 MACRO special_warp_spec
@@ -78,7 +80,6 @@ FlyWarpDataPtr:
 	fly_warp_spec ROUTE_4,         .Route4
 	fly_warp_spec ROUTE_10,        .Route10
 	fly_warp_spec REDS_HOUSE_2F, .RedsHouse2F ; This doesn't show on the Fly map, just used so the post-league warp doesn't have a stroke
-	fly_warp_spec FARAWAY_ISLAND_OUTSIDE, .FarawayIslandOutside
 
 .PalletTown:     fly_warp PALLET_TOWN,      5,  6
 .ViridianCity:   fly_warp VIRIDIAN_CITY,   23, 26
@@ -94,6 +95,5 @@ FlyWarpDataPtr:
 .CitrineCity:    fly_warp CITRINE_CITY,    15, 18
 .CeladonUniversityOutside:    fly_warp CELADON_UNIVERSITY_OUTSIDE,    15, 26
 .Route4:         fly_warp ROUTE_4,         11,  6
-.Route10:        fly_warp ROUTE_10,        11, 20
+.Route10:        fly_warp ROUTE_10,        11, 28
 .RedsHouse2F:    fly_warp REDS_HOUSE_2F,    3,  6
-.FarawayIslandOutside: fly_warp FARAWAY_ISLAND_OUTSIDE, 2, 23

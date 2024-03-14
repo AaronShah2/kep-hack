@@ -134,52 +134,96 @@ SetPal_GameFreakIntro:
 	ret
 
 ; uses PalPacket_Empty to build a packet based on the current map
+; are the edits I've made here horribly inefficient? yes, but as long as it works, who cares?
 SetPal_Overworld:
+    ld a, [wCurMap]
+    cp CELADON_GYM
+    jr nz, .notCeladon
+	ld hl, PalPacket_Gay
+	ld de, wPalPacket
+	ld bc, $10
+	call CopyData
+	ld hl, PalPacket_Gay
+	ld de, BlkPacket_Gay
+	ld a, SET_PAL_OVERWORLD
+	ld [wDefaultPaletteCommand], a
+	ret
+.notCeladon
 	ld hl, PalPacket_Empty
 	ld de, wPalPacket
 	ld bc, $10
 	call CopyData
 	ld a, [wCurMapTileset]
 	cp CEMETERY
-	jr z, .PokemonTowerOrAgatha
+	jp z, .PokemonTowerOrAgatha
 	cp CAVERN
-	jr z, .caveOrBruno
+	jp z, .caveOrBruno
 	ld a, [wCurMap]
 	cp BRUNSWICK_TRAIL
-	jr z, .brunswick
+	jp z, .brunswick
 	cp FIRST_INDOOR_MAP
-	jr c, .townOrRoute
+	jp c, .townOrRoute
 	cp POWER_PLANT
-	jr z, .powerPlant
+	jp z, .powerPlant
 	cp BRUNSWICK_GLADE
-	jr z, .brunswick
+	jp z, .brunswick
 	cp BRUNSWICK_GROTTO
-	jr z, .brunswick
+	jp z, .brunswick
 	cp SILPH_GAUNTLET_3F
-	jr z, .ship
+	jp z, .ship
+	cp VERMILION_FERRY_DOCK
+	jp z, .ship
 	cp GAME_CORNER
-	jr z, .pachinko
+	jp z, .pachinko
 	cp GAME_CORNER_PRIZE_ROOM
-	jr z, .pachinko
+	jp z, .pachinko
+	cp ROCKET_HIDEOUT_B1F
+	jp z, .pachinko
+	cp ROCKET_HIDEOUT_B2F
+	jp z, .pachinko
+	cp ROCKET_HIDEOUT_B3F
+	jp z, .pachinko
+	cp ROCKET_HIDEOUT_B4F
+	jp z, .pachinko
+	cp ROCKET_HIDEOUT_ELEVATOR
+	jp z, .pachinko
+	cp GIOVANNIS_ROOM
+	jp z, .pachinko
+	cp FARAWAY_ISLAND_OUTSIDE
+	jp z, .faraway
+	cp FARAWAY_ISLAND_INSIDE
+	jp z, .faraway
+	cp FARAWAY_FERRY_DOCK
+	jp z, .faraway
 	cp SILPH_GAUNTLET_1F
-	jr z, .faraway
+	jp z, .faraway
 	cp CELESTE_HILL_OUTSIDE
-	jr z, .celeste
+	jp z, .celeste
 	cp CELESTE_HILL
-	jr z, .celeste
+	jp z, .celeste
+	cp CITRINE_FERRY_DOCK
+	jp z, .citrine
+	cp SEAGALLOP_FERRY
+	jp z, .ferry
 	cp SILPH_GAUNTLET_5F
-	jr z, .trans
+	jp z, .trans
+	cp REDS_HOUSE_1F
+	jp z, .pallet
+	cp REDS_HOUSE_2F
+	jp z, .pallet
+	cp MT_MOON_CRATER
+	jp z, .areazero
 	cp CERULEAN_CAVE_2F
-	jr c, .normalDungeonOrBuilding
+	jp c, .normalDungeonOrBuilding
 	cp LORELEIS_ROOM
-	jr z, .seafoam
+	jp z, .seafoam
 	cp BRUNOS_ROOM
-	jr z, .caveOrBruno
+	jp z, .caveOrBruno
 .normalDungeonOrBuilding
 	ld a, [wLastMap] ; town or route that current dungeon or building is located
 .townOrRoute
 	cp NUM_CITY_MAPS
-	jr c, .town
+	jp c, .town
 	ld a, PAL_ROUTE - 1
 .town
 	inc a ; a town's palette ID is its map ID + 1
@@ -212,6 +256,8 @@ SetPal_Overworld:
 	jr z, .garnet
 	cp ROCK_TUNNEL_B1F + 1
 	jr c, .caveDefault
+	cp CELESTE_HILL_CAVE
+	jr z, .celeste
 .caveDefault
 	ld a, PAL_CAVE - 1
 	jr .town
@@ -230,9 +276,6 @@ SetPal_Overworld:
 .celeste
 	ld a, PAL_CELESTE - 1
 	jr .town
-.faraway
-	ld a, PAL_ROUTE - 1
-	jr .town
 .seafoam
 	ld a, PAL_CYANMON - 1
 	jr .town
@@ -247,6 +290,21 @@ SetPal_Overworld:
 	jr .town
 .trans
 	ld a, PAL_FUCHSIA - 1
+	jr .town
+.faraway
+	ld a, PAL_ROUTE - 1
+	jr .town
+.citrine
+	ld a, PAL_CITRINE - 1
+	jr .town
+.pallet
+	ld a, PAL_PALLET - 1
+	jr .town
+.ferry
+	ld a, PAL_BLUEMON - 1
+	jr .town
+.areazero
+	ld a, PAL_0F - 1
 	jr .town
 
 ; used when a Pokemon is the only thing on the screen
@@ -340,9 +398,6 @@ BadgeBlkDataLengths:
 	db 6     ; Earth Badge
 
 DeterminePaletteID:
-	bit TRANSFORMED, a ; a is battle status 3
-	ld a, PAL_PURPLEMON  ; if the mon has used Transform, use Ditto's palette
-	ret nz
 	ld a, [hl]
 DeterminePaletteIDOutOfBattle:
 	ld [wd11e], a

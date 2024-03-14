@@ -331,7 +331,7 @@ INCLUDE "crysaudio/music/RBY/lavender.asm"
 INCLUDE "crysaudio/music/RBY/safarizone.asm"
 INCLUDE "crysaudio/music/RBY/gym.asm"
 INCLUDE "crysaudio/music/RBY/pokecenter.asm"
-INCLUDE "crysaudio/music/RBY/lavenbar.asm"
+INCLUDE "crysaudio/music/RBY/areazero.asm"
 INCLUDE "crysaudio/music/RBY/citrine.asm"
 
 
@@ -380,6 +380,11 @@ INCLUDE "crysaudio/music/RBY/victory4.asm"
 INCLUDE "crysaudio/music/RBY/kinchou01.asm"
 INCLUDE "crysaudio/music/RBY/mewtwo01.asm"
 INCLUDE "crysaudio/music/RBY/legendarybattle.asm"
+INCLUDE "crysaudio/music/RBY/giovannisroom.asm"
+INCLUDE "crysaudio/music/RBY/rocketrby.asm"
+INCLUDE "crysaudio/music/RBY/giovannibattle.asm"
+INCLUDE "crysaudio/music/RBY/elitefourbattle.asm"
+INCLUDE "crysaudio/music/RBY/champrival.asm"
 
 SECTION "TCG Songs 1", ROMX
 

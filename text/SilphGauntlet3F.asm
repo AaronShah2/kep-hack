@@ -22,7 +22,7 @@ _SilphGauntlet3FBattleText2::
 	done
 
 _SilphGauntlet3FEndBattleText2::
-	text "Sploosh!"
+	text "Agh!"
 	prompt
 
 _SilphGauntlet3FAfterBattleText2::
@@ -71,12 +71,10 @@ _SilphGauntlet3FEndBattleText4::
 _SilphGauntlet3FAfterBattleText4::
 	text "CHIEF called me"
 	line "here to fix some"
-	cont "lights."
-	
-	para "But..."
-	
-	para "They're working"
-	line "just fine..?"
+	cont "lights, but they"
+	cont "don't seem to be"
+	cont "malfunctioning"
+	cont "at all..."
 	done
 
 _SilphGauntlet3FBattleText5:: ; Rolling Stones reference, Jumpin' Jack Flash (1968).
@@ -95,7 +93,7 @@ _SilphGauntlet3FAfterBattleText5::
 	line "here stinks!"
 	
 	para "Where's all the"
-	cont "rock 'n' roll?!"
+	line "rock 'n' roll?!"
 	done
 
 _SilphGauntlet3FBattleText6::

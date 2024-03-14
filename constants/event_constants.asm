@@ -36,8 +36,9 @@
 	const EVENT_BEAT_VIRIDIAN_PREGYM_TRAINER_0
 	const EVENT_BEAT_VIRIDIAN_PREGYM_TRAINER_1
 	const EVENT_GOT_TM42
+	const EVENT_GOT_YUJIROU_BOTTLE_CAP
 	const EVENT_BEAT_YUJIROU
-	const_skip 11
+	const_skip 10
 	const EVENT_OAK_GOT_PARCEL
 	const EVENT_GOT_OAKS_PARCEL
 	const_skip 22
@@ -51,6 +52,8 @@
 	const EVENT_BEAT_VIRIDIAN_GYM_TRAINER_5
 	const EVENT_BEAT_VIRIDIAN_GYM_TRAINER_6
 	const EVENT_BEAT_VIRIDIAN_GYM_TRAINER_7
+	const_skip 3
+	const EVENT_GIOVANNIS_ROOM_DOOR_UNLOCKED
 
 ; Pewter City events
 	const_next $68
@@ -751,12 +754,20 @@
 	const_skip 15
 	const EVENT_BEAT_MANSION_3_TRAINER_0
 	const EVENT_BEAT_MANSION_3_TRAINER_1
-	const_skip 14
+	const_skip 6
+	const EVENT_BEAT_CINNABAR_VOLCANO_TRAINER_1
+	const EVENT_BEAT_CINNABAR_VOLCANO_TRAINER_2
+	const EVENT_BEAT_CINNABAR_VOLCANO_TRAINER_3
+	const EVENT_BEAT_CINNABAR_VOLCANO_TRAINER_4
+	const_skip 4
 	const EVENT_BEAT_MANSION_4_TRAINER_0
 	const EVENT_BEAT_MANSION_4_TRAINER_1
 
-; Safari Zone events
+; Safari Zone events, also used as a jank compression method for Celeste Hill Cave's trainers
 	const_next $880
+	const_skip
+	const EVENT_BEAT_CELESTE_HILL_CAVE_BEAUTY ; Mina
+	const EVENT_BEAT_CELESTE_HILL_CAVE_COOLTRAINER_M ; Primo
 	const EVENT_GOT_HM03
 	const EVENT_GOT_MELTAN
 	
@@ -807,6 +818,8 @@ DEF INDIGO_PLATEAU_EVENTS_END EQU const_value - 1
 	const EVENT_BEAT_VICTORY_ROAD_1_TRAINER_1
 	const_skip 4
 	const EVENT_VICTORY_ROAD_1_BOULDER_ON_SWITCH
+	const EVENT_BEAT_CHIEF ; moved out of the below union to prevent bugs
+	const EVENT_MEWTWO_UNLOCKED
 
 ; Silph Gauntlet events
 	const_next $930
@@ -862,7 +875,7 @@ DEF SILPH_GAUNTLET_EVENTS_START EQU const_value
 	const EVENT_BEAT_GAUNTLET_SABRINA
 	const EVENT_BEAT_GAUNTLET_BLAINE
 	const_skip
-	const EVENT_BEAT_CHIEF
+	const_skip
 	const_skip 5
 	const_skip
 DEF SILPH_GAUNTLET_EVENTS_END EQU const_value - 1
@@ -891,6 +904,23 @@ DEF SILPH_GAUNTLET_EVENTS_END EQU const_value - 1
 	const EVENT_SEAFOAM4_BOULDER2_DOWN_HOLE
 	const_skip 8
 	const EVENT_BEAT_ARTICUNO
+	; ends at $9DB
+
+; Celeste Hill / Brunswick Glade Trainers
+	const_next $9E0
+	const_skip
+	; Celeste Hill Outside
+	const EVENT_BEAT_CELESTE_HILL_OUTSIDE_BEAUTY ; Selphy
+	const EVENT_BEAT_CELESTE_HILL_OUTSIDE_COOLTRAINER_M ; Will
+	const EVENT_BEAT_CELESTE_HILL_OUTSIDE_GENTLEMAN ; Fan Club Chairman
+	
+	; Brunswick Glade
+	const_next $9F0
+	const_skip
+	const EVENT_BEAT_BRUNSWICK_GLADE_COOLTRAINER_F ; Leaf
+	const EVENT_BEAT_BRUNSWICK_GLADE_GENTLEMAN ; Fuji
+	const EVENT_BEAT_BRUNSWICK_GLADE_BEAUTY ; Ariana
+	const EVENT_BEAT_BRUNSWICK_GLADE_COOLTRAINER_M ; Trace
 
 ; End of events
 	const_next $A00

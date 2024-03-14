@@ -68,7 +68,7 @@ PokedexEntryPointers:
 	dw DragoniteDexEntry
 	dw CactormusDexEntry
 	dw SharpoonDexEntry
-	dw WiglettDexEntry
+	dw BittybatDexEntry
 	dw DoduoDexEntry
 	dw PoliwagDexEntry
 	dw JynxDexEntry
@@ -139,7 +139,7 @@ PokedexEntryPointers:
 	dw DecillaDexEntry
 	dw KinglerDexEntry
 	dw CloysterDexEntry
-	dw WugtrioDexEntry
+	dw MagnetiteDexEntry
 	dw ElectrodeDexEntry
 	dw ClefableDexEntry
 	dw WeezingDexEntry
@@ -190,6 +190,8 @@ PokedexEntryPointers:
 	dw BellsproutDexEntry
 	dw WeepinbellDexEntry
 	dw VictreebelDexEntry
+	dw WiglettDexEntry
+	dw WugtrioDexEntry
 	dw ScizorDexEntry
 	dw RhyperiorDexEntry
 	dw EspeonDexEntry
@@ -248,6 +250,7 @@ PokedexEntryPointers:
 	dw TaurosPDexEntry
 	dw TaurosPADexEntry
 	dw TaurosPBDexEntry
+	dw GorillaimoDexEntry
 	dw MissingNoDexEntry
 	dw MissingNoDexEntry
 	dw MissingNoDexEntry
@@ -1344,8 +1347,8 @@ RamooseDexEntry:
 	text_end
 
 LuxwanDexEntry:
-	db "MASQUERADE@"	; changed from Wild Duck since it's more closely based on a mute swan
-	db 3,11
+	db "MASQUERADE@"	; changed from Wild Duck since it's more closely based on a swan
+	db 5,3
 	dw 590
 	text_far _LuxwanDexEntry
 	text_end
@@ -1406,12 +1409,12 @@ CoinpurDexEntry:
 	text_far _CoinpurDexEntry
 	text_end
 
-;BittybatDexEntry:
-;	db "TINY BAT@"
-;	db 1,0
-;	dw 80
-;	text_far _BittybatDexEntry
-;	text_end
+BittybatDexEntry:
+	db "TINY BAT@"
+	db 1,0
+	dw 80
+	text_far _BittybatDexEntry
+	text_end
 
 RibbitoDexEntry:
 	db "SUMO@"
@@ -1553,12 +1556,12 @@ PendrakenDexEntry:
 	text_far _PendrakenDexEntry
 	text_end
 
-;MagnetiteDexEntry:
-;	db "MAGNET@"
-;	db 2,4
-;	dw 400
-;	text_far _MagnetiteDexEntry
-;	text_end
+MagnetiteDexEntry:
+	db "MAGNET@"
+	db 2,4
+	dw 400
+	text_far _MagnetiteDexEntry
+	text_end
 
 TriculesDexEntry:
 	db "BIG HORN@"
@@ -1664,13 +1667,6 @@ KleavorDexEntry:
 	dw 1960
 	text_far _KleavorDexEntry
 	text_end
-
-;MonjaDexEntry:
-;    db "VINE@"
-;	db 1,4
-;	dw 330
-;	text_far _MonjaDexEntry
-;	text_end
 	
 SteelixDexEntry:
     db "IRON SNAKE@"
@@ -1680,7 +1676,7 @@ SteelixDexEntry:
 	text_end 
 	
 HitmontopDexEntry:
-    db "HEADSTAND@"
+    db "HANDSTAND@"
 	db 4,7
 	dw 1060
 	text_far _HitmontopDexEntry
@@ -2020,5 +2016,12 @@ MoltresGDexEntry:
 	db 6,7
 	dw 1460
 	text_far _MoltresGDexEntry
+	text_end
+	
+GorillaimoDexEntry:
+    db "GREAT APE@"
+	db 7,11
+	dw 4080
+	text_far _GorillaimoDexEntry
 	text_end
 	

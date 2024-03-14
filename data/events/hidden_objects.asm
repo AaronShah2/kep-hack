@@ -46,7 +46,6 @@ HiddenObjectMaps:
 	db SAFARI_ZONE_GATE
 	db SAFARI_ZONE_WEST
 	db SILPH_CO_5F
-	db SILPH_CO_9F
 	db COPYCATS_HOUSE_2F
 	db CERULEAN_CAVE_1F
 	db CERULEAN_CAVE_B1F
@@ -90,6 +89,7 @@ HiddenObjectMaps:
 	db MT_MOON_CRATER
 	db DAYCARE
 	db MT_MOON_SQUARE
+	db BRUNSWICK_TRAIL
 	db -1 ; end
 
 HiddenObjectPointers:
@@ -141,7 +141,6 @@ HiddenObjectPointers:
 	dw SafariZoneEntranceHiddenObjects
 	dw SafariZoneWestHiddenObjects
 	dw SilphCo5FHiddenObjects
-	dw SilphCo9FHiddenObjects
 	dw CopycatsHouse2FHiddenObjects
 	dw CeruleanCave1HiddenObjects
 	dw CeruleanCave3HiddenObjects
@@ -185,6 +184,7 @@ HiddenObjectPointers:
 	dw MtMoonCraterHiddenObjects
 	dw DaycareHiddenItems
 	dw MtMoonSquareHiddenItems
+	dw BrunswickTrailHiddenItems
 
 MACRO hidden_object
 	db \2 ; y coord
@@ -429,8 +429,8 @@ SSAnne10HiddenObjects:
 	db -1 ; end
 
 Route10HiddenObjects:
-	hidden_object  9, 17, SUPER_POTION, HiddenItems
-	hidden_object 16, 53, MAX_ETHER, HiddenItems
+	hidden_object  9, 25, SUPER_POTION, HiddenItems
+	hidden_object 12, 71, MAX_ETHER, HiddenItems
 	db -1 ; end
 
 RocketHideout1HiddenObjects:
@@ -469,10 +469,6 @@ SafariZoneWestHiddenObjects:
 
 SilphCo5FHiddenObjects:
 	hidden_object 12,  3, ELIXER, HiddenItems
-	db -1 ; end
-
-SilphCo9FHiddenObjects:
-	hidden_object  2, 15, MAX_POTION, HiddenItems
 	db -1 ; end
 
 CopycatsHouse2FHiddenObjects:
@@ -573,8 +569,8 @@ CeladonMansion5HiddenObjects:
 FightingDojoHiddenObjects:
 	hidden_object  3,  9, SPRITE_FACING_UP, PrintFightingDojoText
 	hidden_object  6,  9, SPRITE_FACING_UP, PrintFightingDojoText
-	hidden_object  4,  0, SPRITE_FACING_UP, PrintFightingDojoText2
-	hidden_object  5,  0, SPRITE_FACING_UP, PrintFightingDojoText3
+	hidden_object  1,  0, SPRITE_FACING_UP, PrintFightingDojoText2
+	hidden_object  2,  0, SPRITE_FACING_UP, PrintFightingDojoText3
 	db -1 ; end
 
 IndigoPlateauLobbyHiddenObjects:
@@ -666,4 +662,8 @@ DaycareHiddenItems:
 
 MtMoonSquareHiddenItems:
 	hidden_object  5,  5, MOON_STONE, HiddenItems
+	db -1
+
+BrunswickTrailHiddenItems:
+	hidden_object 24, 11, TM_SOLARBEAM, HiddenItems
 	db -1

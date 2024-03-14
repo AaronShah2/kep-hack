@@ -171,7 +171,7 @@ MoveNames:: ; 12chr limit
 	li "IRON DEFENSE"
 	li "DAZZLE GLEAM"
 	li "NIGHT SLASH"
-	li "FEINT ATTACK"
+	li "FAINT ATTACK"
 	li "IRON HEAD"
 	li "BRUTAL SWING"
 	li "CHARM"
@@ -180,10 +180,12 @@ MoveNames:: ; 12chr limit
 	li "MIRROR SHOT"
 	li "SMART STRIKE"
 	li "FAKE TEARS"
-	li "FALSURRENDER" ; maybe we leave this out. maybe.
+	li "FAKESURRENDR"
 	li "KOWTOWCLEAVE"
 	li "DISARMVOICE"
 	li "NASTY PLOT"
 	li "RAGE FIST"
+	li "UPPERCUT"
+	li "POWDER SNOW"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

@@ -4,6 +4,8 @@ CitrineRocketHouse_Script:
 CitrineRocketHouse_TextPointers:
 	dw MartGuy1Text
 	dw MartGuy2Text
+	dw MartGuy3Text
+	dw MartGuy4Text
 	dw RocketText1
 	dw RocketText2
 	dw MeowthText
@@ -11,10 +13,16 @@ CitrineRocketHouse_TextPointers:
 	dw JessieFight
 
 MartGuy1Text:
-	script_mart TM_SWORDS_DANCE, TM_TOXIC, TM_BODY_SLAM, TM_DOUBLE_EDGE, TM_BUBBLEBEAM, TM_ICE_BEAM, TM_BLIZZARD, TM_PAY_DAY, TM_COUNTER, TM_SEISMIC_TOSS, TM_MEGA_DRAIN, TM_THUNDERBOLT, TM_EARTHQUAKE, TM_DIG,
+	script_mart TM_SWORDS_DANCE, TM_WHIRLWIND, TM_TOXIC, TM_BODY_SLAM, TM_DOUBLE_EDGE, TM_BUBBLEBEAM, TM_WATER_GUN, TM_ICE_BEAM, TM_BLIZZARD, TM_HYPER_BEAM, TM_PAY_DAY, TM_COUNTER, TM_SEISMIC_TOSS, TM_RAGE
 
 MartGuy2Text:
-	script_mart  TM_PSYCHIC_M, TM_FIRE_BLAST, TM_THUNDER_WAVE, TM_EXPLOSION, TM_ROCK_SLIDE, PROTECTOR, UP_GRADE, DUBIOUS_DISC, METAL_COAT, BLK_AUGURITE, DOME_FOSSIL, HELIX_FOSSIL, WING_FOSSIL, OLD_AMBER
+	script_mart TM_MEGA_DRAIN, TM_SOLARBEAM, TM_DRAGON_RAGE, TM_THUNDERBOLT, TM_THUNDER, TM_EARTHQUAKE, TM_FISSURE, TM_DIG, TM_PSYCHIC_M, TM_TELEPORT, TM_MIMIC, TM_BIDE, TM_METRONOME, TM_SELFDESTRUCT
+
+MartGuy3Text:
+	script_mart TM_FIRE_BLAST, TM_SWIFT, TM_SKULL_BASH, TM_SOFTBOILED, TM_DREAM_EATER, TM_SKY_ATTACK, TM_REST, TM_THUNDER_WAVE, TM_PSYWAVE, TM_EXPLOSION, TM_ROCK_SLIDE, TM_TRI_ATTACK, TM_SUBSTITUTE
+
+MartGuy4Text:
+	script_mart PROTECTOR, UP_GRADE, DUBIOUS_DISC, METAL_COAT, BLK_AUGURITE, DOME_FOSSIL, HELIX_FOSSIL, WING_FOSSIL, OLD_AMBER
 
 RocketText1:
 	text_far _RocketText1
@@ -64,8 +72,7 @@ JamesText:
 	call RestoreScreenTilesAndReloadTilePatterns
 	call LoadGBPal
 	pop af
-	ld hl, JamesDone
-	call PrintText
+	jr c, .refused
 	
 	; DV increasing process.
 	; Thanks to Vimescarrot for giving me pointers on this!
@@ -74,12 +81,26 @@ JamesText:
 	
 	ld bc, wPartyMon2 - wPartyMon1 ; This gets to the right slot for DVs
 	call AddNTimes ; Gets us there
+	; check if already maxed
+	ld b, h ; store beginning address
+	ld c, l
+	ld a, [hli] ; Attack + Defence
+	cp a, %11111111
+	jr nz, .train ; at least one stat isnt maxed
+	ld a, [hl] ; Speed + Special
+	cp a, %11111111
+	jr z, .alreadyTrained ; all stats were maxed
+.train
+	ld h, b ; restore address
+	ld l, c
 	ld a, %11111111 ; Load FFFF FFFF, perfect 15s
 	ld [hli], a ; Attack + Defence
 	ld [hl], a ; Speed + Special
 	; And we're done!
 	
 	; Currently this doesn't automatically change the stats because it's fucking insane
+	ld hl, JamesDone
+	call PrintText
 	
 	; Bottle Cap removal service
 	ld hl, BottleCapList

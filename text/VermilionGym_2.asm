@@ -6,7 +6,7 @@ _LTSurgePostBattleAdviceText::
 	line "sure powerful!"
 
 	para "But, it's useless"
-	line "against ground-"
+	line "against GROUND-"
 	cont "type #MON!"
 	done
 
@@ -37,7 +37,9 @@ _TM24ExplanationText::
 	line "THUNDERBOLT!"
 
 	para "Teach it to an"
-	line "electric #MON!"
+	line "ELECTRIC-type,"
+	cont "like PIKACHU or"
+	cont "GAOTORA!"
 	done
 
 _TM24NoRoomText::
@@ -103,19 +105,23 @@ _VermilionGymEndBattleText3::
 	prompt
 
 _VermilionGymAfterBattleText3::
-	text "LT.SURGE set up"
-	line "double locks!"
-	cont "Here's a hint!"
+	text "Here's a hint!"
 
 	para "When you open the"
 	line "1st lock, the 2nd"
 	cont "lock is right"
 	cont "next to it!"
+
+	para "Though, half the"
+	line "time, the wiring"
+	cont "messes up, and"
+	cont "it'll be in the"
+	cont "top left can..."
 	done
 
 _VermilionGymGuidePreBattleText::
 	text "Yo! Champ in"
-	line "making!"
+	line "the making!"
 
 	para "LT.SURGE has a"
 	line "nickname. People"
@@ -124,9 +130,10 @@ _VermilionGymGuidePreBattleText::
 	cont "American!"
 
 	para "He's an expert on"
-	line "electric #MON!"
+	line "ELECTRIC-type"
+	cont "#MON!"
 
-	para "Birds and water"
+	para "Birds and aquatic"
 	line "#MON are at"
 	cont "risk! Beware of"
 	cont "paralysis too!"
@@ -145,6 +152,6 @@ _VermilionGymGuidePostBattleText::
 	done
 
 _SurgeRematchDefeatedText::
-	text "Absolutely"
-	line "shocking!"
+	text "Hah!"
+	line "Shocking!"
 	prompt

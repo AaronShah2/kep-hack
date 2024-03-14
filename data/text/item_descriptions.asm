@@ -31,6 +31,11 @@ _BicycleDescription::
 	next "for travel."
 	prompt
 
+_SafariBallDescription::
+	text "Just an ULTRA BALL"
+	next "painted green."
+	prompt
+
 _MoonStoneDescription::
 _FireStoneDescription::
 _ThunderStoneDescription::
@@ -150,7 +155,8 @@ _HelixFossilDescription::
 	prompt
 
 _SecretKeyDescription::
-	text "Opens doors."
+	text "Opens the door to"
+	next "CINNABAR GYM."
 	prompt
 
 _BikeVoucherDescription::
@@ -519,7 +525,7 @@ _TM26Description::
 	prompt
 
 _TM27Description::
-	text "A ground-type,"
+	text "A GROUND-type,"
 	next "one-hit KO attack."
 	prompt
 

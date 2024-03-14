@@ -844,7 +844,7 @@ FaintEnemyPokemon:
 	; This checks if the opponent is Meltan, the Jar isn't full, and it's in the bag.
 	; If so, it increments the amount of candies in the jar. Once full, it stops counting.
 	ld a, [wEnemyMonSpecies] ; Load species.
-	cp $E4 ; Is it Meltan?
+	cp $E6 ; Is it Meltan?
 	jr nz, .skip ; Continue as normal if not.
 	
 	ld b, CANDY_JAR ; Ok, we have a Meltan on our hands. Is the Jar in the bag?
@@ -991,6 +991,11 @@ TrainerBattleVictory:
 	ld hl, wFlags_D733
 	set 1, [hl]
 .notrival
+	ld a, [wTrainerClass]
+	cp LEADER_GIOVANNI ; final battle against Giovanni
+	jr nz, .notrivalorGio
+	ld b, MUSIC_DEFEATED_GYM_LEADER
+.notrivalorGio
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	ld a, b
@@ -1986,6 +1991,28 @@ DrawEnemyHUDAndHPBar:
 	lb bc, 4, 12
 	call ClearScreenArea
 	callfar PlaceEnemyHUDTiles
+	push hl
+	ld a, [wIsInBattle]
+	cp 2
+	jr z, .notOwned
+	ld a, [wEnemyMonSpecies2]
+	ld [wd11e], a
+	ld hl, IndexToPokedex
+	ld b, BANK(IndexToPokedex)
+	call Bankswitch
+	ld a, [wd11e]
+	dec a
+	ld c, a
+	ld b, FLAG_TEST
+	ld hl, wPokedexOwned
+	predef FlagActionPredef
+	ld a, c
+	and a
+	jr z, .notOwned
+	coord hl, 1, 1;horizontal/vertical
+	ld [hl], $D0 ;replace this with your Poké Ball icon or other character
+.notOwned
+	pop hl
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
 	call CenterMonName
@@ -6954,6 +6981,9 @@ PlayMoveAnimation:
 	predef_jump MoveAnimation
 
 InitBattle::
+	xor a
+	ld [wWasTrainerBattle], a 	;Remember to clear wWasTrainerBattle from any previous battles, 
+								;because this new  battle could be a static wild encounter.
 	ld a, [wCurOpponent]
 	and a
 	jr z, DetermineWildOpponent

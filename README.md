@@ -4,12 +4,12 @@ This is a ROM Hack of Pokémon Red and Blue, aiming to expand the Kanto region w
 
 If playing on an emulator, BGB is strongly recommended for its accuracy and features. Inaccurate emulators, such as VBA and TGB Dual, can experience unintended glitches. This hack is fully playable on official hardware as well.
 
-New Pokemon:
+New Pokemon
 ====
 The Kanto Expansion Pak's ethos is to add every "Kanto-related" Pokemon to RBY without fundamentally changing the grander metagame. What's defined as "Kanto-related" is a Pokemon that evolves from an existing Kanto Pokemon, made an appearance in a Kanto-based game (LGPE), is a regional variant, or was a Kanto-related Pokemon cut during the development of an official game.
 
 With this criteria, we get:
-- The 34 known beta Pokemon that were cut from Red and Green; eg. Gorochu, Kotora
+- 35 known prototype Pokemon that were cut from Red and Green; eg. Gorochu, Kotora
 - Evolutions or pre-evolutions of a Kanto Pokemon found in a future generation eg. Steelix, Glaceon, Kleavor, Annihilape
 - Evolutions of Kanto Pokemon found in the SpaceWorld '97 demo of Gold and Silver; eg. Luxwan, Bellignan
 - All fully-evolved regional variants of Kanto Pokemon; eg. Alolan Muk, Galarian Slowbro, Hisuian Arcanine, Paldean Tauros
@@ -29,8 +29,6 @@ In general, the following Pokemon are not available;
 - Mime Jr.
 - Happiny
 - Munchlax
-- Bittybat (prototype Zubat pre-evolution from Red and Green)
-- Magnetite (prototype middle stage between Magnemite and Magneton)
 - Elebaby (prototype Elekid pre-evolution in May98 GSC sprite cache)
 - Burgela (SW97 Baby Tangela)
 - Paraspor (SW97 Baby Paras)
@@ -41,7 +39,7 @@ In general, the following Pokemon are not available;
 
 Mega Evolutions and Gigantamax forms are not in the game mainly by choice. There are no held items and there isn't a special button or anything, so it felt kind of weird to add, would deviate significantly from the RBY experience, and requires a pretty big overhaul to the battle system. It's definitely possible, just not for me.
 
-New Types:
+New Types
 ====
 To accomodate the new Pokemon, the Dark, Steel, and Fairy types are added. They are effectively "tacked on", with no vanilla Pokemon or moves being changed, which is a big part of what this hack wants. 
 
@@ -53,7 +51,7 @@ Changes at a glance:
 - Bite is still Normal-type.
 - The Clefairy, Mime Jr, and Jigglypuff lines are not Steel or Fairy-type, respectively.
 	- This (and Bite) was done to ensure the original Kanto Pokemon were unaltered in any way.
-	- While Magnemite and Magneton are pure Electric, Magnezone is part-Steel.
+	- While Magnemite, Magnetite and Magneton are pure Electric, Magnezone is part-Steel.
 	- Scream Tail remains Fairy/Psychic.
 - Fire remains neutral against Ice.
 - Bug and Poison remain super effective against each other.
@@ -78,7 +76,7 @@ Naturally, these types get appropriate moves. They are currently distributed to 
 - Dark: Brutal Swing, Fake Tears, False Surrender, Feint Attack, Kowtow Cleave, Nasty Plot, Night Slash
 - Fairy: Charm, Dazzling Gleam, Disarming Voice, Draining Kiss, Fairy Wind, Play Rough, Sweet Kiss
 
-New Items:
+New Items
 ====
 There are some new items here, with the aim of accomodating new Pokemon, adding features, and acting as methods of getting to new locations. 
 - The Wing Fossil is a new item that allows Aerodactyl to be revived, as the Old Amber is instead used for Decilla. It's hidden in Mt. Moon.
@@ -99,7 +97,7 @@ New Areas
 	- This is a reference to a Magikarp event from July 1998, and includes the lore from it and other areas of Pokemon's early worldbuilding.
 	- There are features new infinitely re-battleable trainers for grinding money.
 	- There's a Move Deleter and Move Relearner, allowing for HM deletion and getting back lost moves.
-- Citrine City is a new island city that can be accessed in the postgame through a new port in Vermillion.
+- Citrine City is a new island city that can be accessed in the postgame through a new port in Vermillion. Name derived from the Helix Chamber PokeThon ROM Hack.
 	- There's a house with a Move Tutor that can teach Tradeback moves without the need for GSC's Time Capsule!
 	- It features a Team Rocket house where they will sell you TMs and Evolution Items, as well as provide a Hyper Training feature to get Max DVs!
 	- The Battle Tent from the TwitchPlaysPokemon Anniversary hack makes a return, featuring new trainers and Pokemon!
@@ -120,6 +118,9 @@ New Music
 - Mewtwo has its own battle theme: A demake of the iconic Stadium track! It features some creative deviations to give it a distinct Game Boy feel while fitting with Mewtwo's mystique. Composed by LuciShrimp.
 - Mew and the Legendary Birds have their own battle theme, a demake of the FireRed/LeafGreen pitch-shifted remix. Not simply pitching it up, percussion elements have been added to give it that rustic FRLG "feel" that distinguishes it from the original games. Composed by LuciShrimp.
 	- Limited static encounters, such as the two sleeping Snorlax, and the restored prototype Omega, also use this theme.
+- Mt. Moon Crater uses a demake of Scarlet and Violet's Area Zero theme! Composed by LuciShrimp.
+- Team Rocket's battle theme from GSC has been backported with some small changes to give it more of an RBY feel. Plays during Rocket Grunt fights, including Jessie and James, as well as the initial 2 Giovanni battles. Composed by LuciShrimp.
+	- In addition to the aforementioned Team Rocket battle theme, a slower, pitched-down arrangement plays when battling Giovanni in his gym, as well as against a postgame boss. Composed by LuciShrimp and Martha's Against Humanity.
 - Pokemon Yellow's various tracks have been backported, such as Jessie and James's encounter theme.
 - Several pieces of unused music, including Digda01, Victory4, Field6, Kincho01, and Giovanni's theme have been implemented.
 	- A remix of the unused Koukan (trading) music is also used as a town theme. Composed by BGVC.
@@ -131,7 +132,8 @@ Improved Areas
 	- In effect, you get two stages: Pewter/Cerulean/Vermilion, then Celadon/Fuchsia/Saffron/Cinnabar. Some limits were placed due to the power spike introduced by Celadon City.
 - Giovanni now uses his unused theme song from Yellow, plus has his LGPE monologue in the Rocket Hideout.
 - Jessie and James have been backported from Yellow, appearing in Mt. Moon, Rocket Hideout, Pokemon Tower, and Silph Co. Additionally, they have a closure role in the post-game.
-- Diglett's Cave has a more detailed map with Onix, Wiglett, and Wugtrio also appearing! It also has its beta music!
+- Viridian City features a Pre-Gym, building on what was seen in the Helix Chamber PokeThon ROM Hack, featuring Yujirou. In the KEP team's opinion, this was the best interpretation of the prototype materials!
+- Diglett's Cave has a more detailed map with Onix, Wiglett, and Wugtrio also appearing! It also has its prototype music!
 - The Day Care now contains a PC, is generally more detailed, and houses Melanie from Yellow. If you pick Pikachu or Eevee and beat Misty, Melanie will give you a Bulbasaur.
 - Route 24 now features two things;
 	- There's a new Fishing Rod house, which merges all the Rods in the game.
@@ -140,12 +142,15 @@ Improved Areas
 - Vermilion City now features Officer Jenny with the Squirtle. She only appears if Pikachu or Eevee are chosen.
 - Rock Tunnel has a more workable map, now being easier to go through and having new areas to explore. Includes a way to get renewable fossils, items, and other interesting bits and pieces. Overall, it makes Flash much more rewarding to bring, showing you where the items and content are instead of being an inconvenience. 
 - Celadon Mansion's Roof House now features Shinjuku Jacky, a cut representation of a famous Virtua Fighter player. The house has also been redesigned, derived from the unused "Grandpa's House", featuring Nintendo 64s.
+	- If you go to the Developer Room after beating the game, Morimoto's boss fight from LGPE will be available!
 - Pokemon Tower was shortened, being less intensive and adding room for more maps.
 - Fuchsia City has been made to resemble the more walkable LGPE version, removing the Cut trees among other things.
 - The Fighting Dojo has been revamped, featuring a design reminiscent of the prototype versions; rough floors, the elder in the back, and more. Additionally, you can now get a Hitmontop as a third option. The Karate Master is also now treated somewhat more like a Gym Leader, having Gym Scaling and a Rematch system. 
 - Silph Co's pathing was completely overhauled to make navigating it less tedious.
+- Silph Co. 11F's unreferenced Porygon PC was restored. It's on the monitor!
 - Cinnabar Island is a lot bigger, with the volcano being added to it. The mansion seems different too...
 	- Cinnabar Lab's Trade Room now features the Trader, who will evolve trade-evolving Pokemon for you!
+	- Cinnabar Lab's Fossil Room now features a unique machine from the prototype blocksets, serving as the fossil machine!
 - Viridian Gym now has a minor new area once you make Giovanni leave.
 - Various Move Tutors from FireRed and LeafGreen have been distributed around the region, instead giving their respective TMs.
 - The S.S. Anne now returns after getting the Marsh Badge and features trades for Galarian forms & Evolutions, as well as Paldean Tauros.
@@ -162,10 +167,11 @@ QoL Enhancements
 - A feminine character option is now available, featuring the sprite from Pokemon Anniversary Red, which is based on Green's manga appearance.
 	- To accomodate this, Celadon Gym's trainers use their more neutral text from Crystal.
 	- The protagonist is also referred to in a gender neutral manner. This changes like, 2-3 lines in the whole game.
-- All 151 original Pokemon, plus an additional 97, can be obtained without the use of trading or glitches, including Mew!
+- All 151 original Pokemon, plus an additional 100, can be obtained without the use of trading or glitches, including Mew!
 - Various moves have had their animations altered to be less intensive for photosensitive individuals, including every animation that was dimmed on the 3DS (Most notably Blizzard and Thunderbolt). This was done with the aim of also improving the move's animations overall, so some look a little flashier.
 	- Full list includes Body Slam, Glare, Disable, Blizzard, BubbleBeam, Confusion, Dream Eater, Explosion, Guillotine, Hyper Beam, Mega Kick, Mega Punch, Psychic, Reflect, Rock Slide, Selfdestruct, Spore, and Thunderbolt.
 - PureRGB's AI enhancements are ported over; said hack was made by Vortiene. In general, it isn't as stupid as it was before.
+	- PureRGB's move animation enhancements are also ported over, making several moves look better and more detailed than before.
 - Bag capacity is increased from 20 to 30 items.
 - Pokemon Box capacity is now 280 Pokemon with 14 boxes.
 - Exp. All now works like the modern Exp. Share, giving all party members max exp. It also only has one message, though it does still take time to calculate all the exp being thrown around. It'll take around 3 seconds to calculate, sort of like saving. Oh, and it's a Key Item now, so you can't sell it by accident.
@@ -177,7 +183,7 @@ QoL Enhancements
 - Running Shoes activate by holding B. Also works with the bike and Surf.
 - Fast text has no frame delay between text scrolling, doubling the scroll speed. It's also been made the default option, so you don't need to go into the Options menu for it.
 	- "Instatext" has also been made a selectable feature, courtesy of BlueZangoose.
-- The Old and Good Rods have been removed, and the Super Rod, now called the Fishing Rod, is obtained in Pewter City. All fishing encounter tables have been altered to roughly match the levels of the surrounding routes. 
+- The Old and Good Rods have been removed, and the Super Rod, now called the Fishing Rod, is obtained on Route 24. All fishing encounter tables have been altered to roughly match the levels of the surrounding routes. 
 - The Elite Four and Champion now have improved teams in the post-game. The Elite Four will use refight text based on their LGPE appearances.
 	- Plus, upon defeating the Elite Four, Legendary Pokemon encounters are reset, like in later games!
 - Traded Pokemon ("Outsiders") can now be nicknamed at the Name Rater's House.
@@ -205,7 +211,7 @@ QoL Enhancements
 	- 3x 7s now gives 900 coins (used to be 300)
 - Game Corner prizes have been altered;
 	- Prices have been changed, so Porygon doesn't require 9999 coins.
-	- New prizes include: Cubone, Cactus, and Squeamata
+	- New prizes include: Cubone, Cactormus, and Squeamata
 	- The Moon Stone is available over TM23 (Dragon Rage). Dragon Rage is still available in Celadon University!
 - Spinner tiles move faster.
 - Fight Debug now allows moves other than Pound.
@@ -256,22 +262,13 @@ and more!
 
 Known Bugs
 ====
-Comprehensive list can be found on Discord.
-- Only portions of spinner tiles animate.
-- Occasionally, menu text sets itself to scroll.
-- The Tradeback Tutor doesn't work properly with Rhydon for reasons likely related to its index number of 1.
-- Fake Tears and Nasty Plot don't quite look right when done from the opponent's side.
-- The door mat tiles added recently warp the player when they walk on another (Citrine mats, arrow tiles...)
-- James doesn't check for Max DVs when Hyper Training.
-- Citrine Dock's warp doesn't work, meaning you have to leave Citrine using Fly
-- LAST_MAP isn't updated properly when sailing from Vermilion to Citrine
-- After reloading the game after beating the Elite Four, Pallet Town's correct palette isn't loaded in until after leaving the house.
-- The Gym Leaders on Floor 6 of Silph Gauntlet don't play the correct music in battle
+- Trying to Surf from the overworld on Cycling Road has an invisible textbox stopping you, but just pressing A again lets you regain control.
+- Jumping from a specific tile off a ledge in Cerulean City causes you to land on a fence. This is being kept in, because it's funny.
 
 Evolution Methods for new Pokemon
 ====
 Due to the odd way some new Pokemon evolve, methods are listed here. 
-- Beta Pokemon are included with their original methods. 
+- Prototype Pokemon are included with their original methods. 
 - Some Pokemon will have methods from the Spaceworld '97 demo to be closer to, or functional in the context of, RBY. Sometimes the newer version is available (eg. Metal Coat evolutions) for the sake of familiarity.
 - To accomodate new additions and ensure everything makes sense, some Pokemon have also had their methods changed. These situations are usually very extreme.
 
@@ -287,7 +284,7 @@ New Pokemon:
 - Electabuzz -> Electivire | Use Thunder Stone
 - Farfetch'd -> Luxwan | L24
 - Gloom -> Bellossom | Use Leaf Stone
-- Golbat -> Crobat | L44
+- Golbat -> Crobat | L40
 - Lickitung -> Lickilicky | L32
 - Magmar -> Magmortar | Use Fire Stone
 - Magneton -> Magnezone | Use Thunder Stone
@@ -307,7 +304,8 @@ New Pokemon:
 - Tangela -> Tangrowth | L44
 - Weepinbell -> Bellignan | Use Poison Stone
 
-Kanto Beta Pokemon:
+Kanto Prototype Pokemon:
+- Bittybat -> Zubat | L14
 - Blastyke -> Blastoise | L36
 - Blottle -> Pendraken | L30
 - Cheep -> Jabetta | L30
@@ -318,11 +316,12 @@ Kanto Beta Pokemon:
 - Pupal -> Carapthor | L10
 - Kotora -> Gaotora -> Gorotora | L16, L36
 - Kolta -> Ponyta | L20
+- Magnemite -> Magnetite -> Magneton | L20, L30
 - Nidorino OR Nidorina -> Nidoreign | Moon Stone
 - Psyduck -> Weirduck -> Golduck | L22, L33
 - Raichu -> Gorochu | Trade
 - Ribbito -> Croakozuna | L30
-- Squeamata -> Ministare -> Iguanarch | L30, L50
+- Squeamata -> Ministare -> Iguanarch | L30, L55
 - Vulpiii -> Vulpix | L15
 - Wartortle -> Totartle | L36, replaces Blastoise
 
@@ -337,7 +336,7 @@ Accessing Regional variants
 ====
 Adding regional variants was difficult; we hit the exact Pokemon cap by cutting their pre-evolutions. However, we managed to implement them quite nicely!
 
-Much like in Let's Go Pikachu and Let's Go Eevee, traders are available who will trade you a regional variant in exchange for a Kantonian one. This goes as follows:
+Much like in Let's Go Pikachu and Let's Go Eevee, traders are available who will trade you a regional variant in exchange for a Kantonian one. These trades will be able to be repeated after every Elite 4 victory. This goes as follows:
 - Viridian City: Raticate
 - Pewter City: Golem
 - Cerulean City: Ninetales
@@ -364,13 +363,14 @@ KEP spriters hold the policy of requiring sprites to be used with direct credit 
 If you use our implementations of anything at all, it is encouraged to submit Pull Requests for bug fixes if you find any issues! We very much appreciate them!
 
 * Plague von Karma - Creator of the Showdown Mod, Director, Developer, Scenarios, Balancing, Dialogue, Pokedex entries, Maps (Mt. Moon Crater, Galarian Bird dungeons, Rock Tunnel, Cinnabar Volcano floors, enhanced Diglett's Cave, Shinjuku Jacky's room, and more), Event scripting, Hyper Training, FRLG Tea, post-game rematches, male/female character selection, Meltan implementation, Yellow backports, and occasional spriter (assisting with Bellignan, Carapthor)
-* Martha's Against Humanity - Developer, Pokémon implementation, Pokedex entries, Event scripting, tweaks of Albatross's sprites, Sylveon, Bellignan and Mimmeo sprites, Maps (Citrine City, Cinnabar Volcano, Underwater Tunnel, Silph Gauntlet,), SGB border, new palettes for postgame areas and Game Corner, etc.
+* Martha's Against Humanity - Developer, Pokémon implementation, Pokedex entries, event scripting, tweaks of Albatross's sprites, Sylveon, Bellignan, Galarian Slowking, Galarian Slowbro and Mimmeo sprites, Maps (Citrine City, Cinnabar Volcano, Underwater Tunnel, Silph Gauntlet,), Giovanni's battle theme, SGB border, new palettes for postgame areas and Game Corner, etc.
 * Ema Skye - Developer, Maps (Silph Co. and Pokemon Tower shortening), Mt. Moon Crater Guard, Showdown Mod assistance.
 * BlueZangoose / Vimescarrot - Pokemon box expansion, Instatext option, general assistance.
 * Albatross - Many of the new sprites used in the hack (A significant number of post-Gen 1 evolutions, all regional variants, Meltan and Carapthor lines, etc.)
-* LuciShrimp - Mewtwo & FireRed/LeafGreen Legendary custom battle music; Area Zero map theme for Mt. Moon Crater.
+* LuciShrimp - Mewtwo & FireRed/LeafGreen Legendary custom battle music; Area Zero map theme for Mt. Moon Crater, Team Rocket theme changes and Giovanni's battle theme.
 * jojobear13 & Mateo - DV/StatExp display, move deleter, & move relearner functionality from Shin Pokered, followed [this guide](https://github.com/jojobear13/shinpokered/blob/master/how%20to%20guides/how%20to%20add%20the%20move%20relearner%26deleter.txt). Tweaks were made to make it compatible with the pokered version we worked off of. Thanks specifically to Mateo's Red++ for the ferry system! Jojobear also provided bug fixes!
-* thornAvery - Various bug fixes, notably to text speed errors.
+* thornAvery - Various bug fixes, notably to text speed errors, as well as making the Battle Tent a lot more functional.
+* LadyMisticus - Bug fixes and minor adjustments, and made a well-documented spreadsheet for the hack that details every Pokemon's stats, movepools and locations, plus more!
 * pret et al - Pokémon Red and Blue Disassembly Project, many tutorials helped us!
 * ausma - Showdown Mod assistance
 * Paulluxx - Showdown Mod assistance
@@ -379,22 +379,39 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * Frrf - Assisting with the development of the Pikachu / Eevee Mode + 5 Starters scenes in Oak's Lab, debugging.
 * erosunica - Assistance with developing Celadon University & Citrine City, plus sources for various subjects.
 * Chatot4444 - Assisting with gym scaling code.
-* Enigami - Reworking the Battle Tent's RestoreTeam code to make it work properly.
-* Ness the Unexplained - Helped with writing NPC dialogue and Pokédex entries for new Pokémon such as Gyopin.
-* ZumiIsawhat? - Restorations of beta OST.
-* FrenchOrange - Reconstructions of various overworld beta sprites.
-* Helix Chamber, RacieBeep, loumilouminosus, Orchid, GBCRetro, & catstorm26 - Prototype Pokémon sprites. Precise credits are available [here](https://cdn.discordapp.com/attachments/1014321591657709569/1015347305483878521/unknown.png).
-* Vortiene/Vortyne - Reused a bit of code from their pureRGB hack, including their Trainer AI. Assisted in bug fixes. Used their sprite sheet generator.
+* Enigami - Reworking the Battle Tent's RestoreTeam code to make it work properly. 
+* HeadBoiSkye - Helped with writing NPC dialogue and Pokédex entries for new Pokémon such as Orfry.
+* ZumiIsawhat? - Restorations of prototype OST.
+* FrenchOrange - Reconstructions of various overworld prototype sprites.
+* Helix Chamber (RacieBeep & Orchid) - Prototype Pokémon sprites. Precise credits are available [here](https://cdn.discordapp.com/attachments/1014321591657709569/1015347305483878521/unknown.png) and below.
+* Vortiene/Vortyne - Reused a bit of code from their pureRGB hack, including their Trainer AI, move animations and Pokedex stats page. Assisted in bug fixes. Used their sprite sheet generator.
+* wrulfy - Reused a bit of code from their Carmine Red hack to improve a handful of move animations, most notably Drill Peck and Horn Drill. Technical advice.
 * Pigu-A, RevoSucks, walle303 - Contributors to Pokemon Anniversary Red's repository, where we reused the Green/FemC sprites and the Battle Tent.
 * Rangi - Reused a bit of code from their Red* / Blue* hack to make HMs usable in the overworld, and generally being an amazing individual.
 * BGVC - Composed the original 4-channel version of the unused Koukan (trading) music.
+* Rainbow Metal Pigeon - Bug fix relating to Gym Leader rematches.
 * SatoMew - Technical advice.
-* wrulfy - Technical advice.
 * suloku - Technical advice regarding setting where you spawn after beating the Elite Four, Exp. All modernisation code
 * 大吟醸 (Daiginjo) - Assistance in translating the Tamamushi University Student Book, allowing for an accurate adaptation of the location.
-* Molk - Balancing of some beta Pokemon, most notably Ramoose.
-* Shellnuts - Balancing of some beta Pokemon, especially Omegadge. Made the SW97 type chart suggestion to balance Galarian Moltres; this would go on to define the mod's identity.
+* Molk - Balancing of some prototype Pokemon, most notably Ramoose.
+* Shellnuts - Balancing of some prototype Pokemon, especially Omegadge. Made the SW97 type chart suggestion to balance Galarian Moltres; this would go on to define the mod's identity.
 * ViWalls - Extremely early adopter of the hack who reported numerous bugs and gave many useful suggestions as a prime member of our target audience.
+* Dr. Lava - Translations of some content used in this hack, particularly the 1996 Pokedex book's entries for DYKG.
+* Nob Ogasawara - Prototype Pokemon names, produced for DYKG.
+
+Albatross sprites: Articuno-G, Blissey, Dugtrio-A, Electivire, Electrode-H, Espeon (back), Exeggutor-A, Gentlarva, Glaceon, Golem-A, Hitmontop, Iguanarch, Kleavor, Leafeon, Lickilicky, Marowak-A, Melmetal, Meltan, Moltres-G, Mr. Rime, Muk-A, Ninetales-A, Perrserker, Persian-A, Politoed, Porygon-Z, Pupal, Raichu-A, Rapidash-G, Raticate-A, Rhyperior, Sandslash-A, Sandy Shocks, Scizor, Sirfetch’d, Slowbro-G, Slowking (back), Slowking-G (back), Sylveon (back), Tangrowth, Tauros-P (all forms), Toedscool, Toedscruel, Umbreon (back), Weezing-G, Wiglett, Zapdos-G
+
+Martha’s Against Humanity sprites: Bellignan (front, with help from PvK), Mimmeo (front), Slowking-G (front), Slowbro-G (front, with help from Albatross), Sylveon (front, with help from Albatross)
+
+Albatross sprites refined by either Martha’s Against Humanity or PvK: Annihilape, Arcanine-H, Bellossom, Carapthor, Gorillaimo, Kingdra, Magmortar, Magnezone, Ministare, Porygon2, Scream Tail, Squeamata, Tauros-P (all forms), Wugtrio
+
+RacieBeep sprites: Balumba, Blastyke, Blottle, Buu, Cactormus, Cheep, Coinpur, Croakozuna, Decilla, Fossils, Gaotora, Gavillain (edited by Albatross), Gawarhed, Gorochu (edited by Martha’s Against Humanity), Gorotora, Guardia, Jabetta (edited by Martha’s Against Humanity), Kolta, Kotora, Luxwan, Nidoreign, Omegadge (front/back), Orfry, Pendraken, Ramoose, Ribbito, Sharpoon, Totartle, Trampel, Vulpiii, Weirduck, Fossil Aerodactyl, Fossil Kabutops, Ghost, Articuno (back), Meowth (back)
+
+Orchid: Luxwan (back), Buu (back)
+
+Zeta_Null: Porygon (front)
+
+Official sprites: Crobat (front, edited by Martha’s Against Humanity), Disturban, Espeon (front, edited by Martha’s Against Humanity), Slowking (front), Steelix (front), Tricules, Umbreon (front, edited by Martha’s Against Humanity)
 
 Original README.md proceeding;
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
