@@ -23,7 +23,7 @@ Music:
 	dba Music_Routes3
 	dba Music_Routes4
 	dba Music_RBYIndigoPlateau
-	dba Music_Lavenbar
+	dba Music_AreaZero
 	dba Music_Citrine
 	dba Music_GymLeaderBattle
 	dba Music_TrainerBattle
@@ -58,3 +58,8 @@ Music:
 	dba Music_Kinchou01
 	dba Music_Mewtwo01
 	dba Music_LegendaryBattle
+	dba Music_GiovannisRoom
+	dba Music_RocketRBY
+	dba Music_GiovanniBattle
+	dba Music_EliteFourBattle
+	dba Music_ChampRival

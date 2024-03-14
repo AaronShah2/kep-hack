@@ -191,7 +191,9 @@
 	const DISARMING_VOICE ; b7
 	const NASTY_PLOT   ; b8
 	const RAGE_FIST	   ; b9?
-	const STRUGGLE     ; formerly a5, now b10?
+	const UPPERCUT	   ; b9
+	const POWDER_SNOW	; b10
+	const STRUGGLE     ; formerly a5, now c0
 DEF NUM_ATTACKS EQU const_value - 1
 
 	; Moves do double duty as animation identifiers.
@@ -233,5 +235,7 @@ DEF NUM_ATTACKS EQU const_value - 1
 	const HIDEPIC_ANIM ; monster disappears
 	const ROCK_ANIM ; throw rock
 	const BAIT_ANIM ; throw bait
+	const AMNESIA_ENEMY_ANIM
+	const FAKE_TEARS_ENEMY_ANIM
 
 DEF NUM_ATTACK_ANIMS EQU const_value - 1

@@ -21,10 +21,6 @@ FightingDojo_ScriptPointers:
 	dw FightingDojoScript3
 
 FightingDojoScript1:
-	CheckEvent EVENT_POST_GAME_ATTAINED ; Required in the case you have cleared the game, but not cleared the dojo. It's an optional deal.
-	ret nz
-	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
-	ret nz
 	call CheckFightingMapTrainers
 	ld a, [wTrainerHeaderFlagBit]
 	and a
@@ -72,7 +68,7 @@ FightingDojoScript3:
 .asm_5cde4
 	ld a, $f0
 	ld [wJoyIgnore], a
-	SetEventRange EVENT_BEAT_KARATE_MASTER, EVENT_BEAT_FIGHTING_DOJO_TRAINER_3
+	SetEventRange EVENT_DEFEATED_FIGHTING_DOJO, EVENT_BEAT_FIGHTING_DOJO_TRAINER_3
 	ld a, $9
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
@@ -109,18 +105,14 @@ FightingDojoText1: ; gym scaling can be removed to make space
 	text_asm
 	CheckEvent EVENT_POST_GAME_ATTAINED ; No need to view previous stuff, technically you can skip Bide this way but I think that's hilarious
 	jp z, .normalProcessing
-	CheckEvent EVENT_GOT_HITMON ; failsafe
-	jp nz, .continue2
 	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
-	jp nz, .continue1
-	CheckEventReuseA EVENT_BEAT_KARATE_MASTER
-	jp nz, .continue2
-.rematchMode ; Rematch functionality. Just loads pre-battle text and his trainer.
-	ld hl, KoichiRematchPreBattleText
+	jp z, .normalProcessing
+	ld hl, KoichiRematchPreBattleText ; Rematch functionality. Just loads pre-battle text and his trainer.
 	call PrintText
 	ld c, BANK(Music_MeetMaleTrainer)
 	ld a, MUSIC_MEET_MALE_TRAINER
 	call PlayMusic
+	ld hl, wd72d
 	set 6, [hl]
 	set 7, [hl]
 	ldh a, [hSpriteIndex]
@@ -129,16 +121,20 @@ FightingDojoText1: ; gym scaling can be removed to make space
 	ld de, KoichiRematchDefeatedText
 	call SaveEndBattleTextPointers
 	call EngageMapTrainer
-	ld a, OPP_BLACKBELT
+	ld a, OPP_KOICHI
 	ld [wCurOpponent], a
 	ld a, 10 ; Silph Gauntlet lineup.
 	ld [wTrainerNo], a
 	ld a, 1
 	ld [wIsTrainerBattle], a
-	ld a, $1
-	ld [wGymLeaderNo], a
 	jr .asm_9dba4
 .normalProcessing
+	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
+	jp nz, .continue1
+	CheckEventReuseA EVENT_BEAT_KARATE_MASTER
+	jp nz, .continue2
+	CheckEvent EVENT_GOT_HITMON ; failsafe
+	jp nz, .continue2
 	ld hl, FightingDojoText_5ce8e
 	call PrintText
 	ld hl, wd72d
@@ -153,7 +149,7 @@ FightingDojoText1: ; gym scaling can be removed to make space
 	; call InitBattleEnemyParameters ; put this back if you mess up
 	
 	; gym scaling spaghetti code begins here - remove initial parameters as we're making our own
-	ld a, OPP_BLACKBELT
+	ld a, OPP_KOICHI
 	ld [wCurOpponent], a
 	
 	ld hl, wObtainedBadges ; Picking the team based on badge count. Need +1 so it loads the right team: remember, you're fighting for the badge! Thanks to Chatot4444 for the help.
@@ -165,15 +161,12 @@ FightingDojoText1: ; gym scaling can be removed to make space
 	ld [wTrainerNo], a
 	ld a, 1
 	ld [wIsTrainerBattle], a
-	ld a, $1
-	ld [wGymLeaderNo], a ; play gym music
 	
 	;ends here
 	
 	ld a, $3
 	ld [wFightingDojoCurScript], a
 	ld [wCurMapScript], a
-	SetEvent EVENT_DEFEATED_FIGHTING_DOJO
 	jr .asm_9dba4
 .continue1
 	ld hl, FightingDojoText_5ce9d

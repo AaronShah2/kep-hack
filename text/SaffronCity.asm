@@ -102,7 +102,7 @@ _SaffronCityText18::
 	cont "LEADER: SABRINA"
 
 	para "The Master of"
-	line "Psychic #MON!"
+	line "PSI #MON!"
 	done
 
 _SaffronCityText20::
@@ -153,7 +153,7 @@ _UpGradePreReceiveText::
 	cont "those TEAM"
 	cont "ROCKET thugs?"
 	
-	text "Thank you so"
+	para "Thank you so"
 	line "much! Here,"
 	cont "take this!"
 	prompt

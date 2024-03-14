@@ -41,7 +41,7 @@ _Lover2::
 
 _BrunswickBattleText1::
 	text "I'm searching"
-	line "for rare BIRD"
+	line "for rare bird"
 	cont "#MON!"
 	done
 
@@ -57,7 +57,7 @@ _BrunswickAfterBattleText1::
 	
 	para "It's my prized"
 	line "#MON!"
-	prompt
+	done
 
 _BrunswickBattleText2::
 	text "My hubby brought"
@@ -69,7 +69,7 @@ _BrunswickEndBattleText2::
 	prompt
 
 _BrunswickAfterBattleText2::
-	text "I saw a BIRD"
+	text "I saw a bird"
 	line "#MON with huge"
 	cont "legs sprint past"
 	cont "me!"
@@ -124,4 +124,17 @@ _FakeTreeAttack::
 	line "a rage!"
 	prompt
 
-; Martha can do the text for her things...
+_TrailDirections::
+	text "BRUNSWICK TRAIL"
+	
+	para "Go north for"
+	line "CITRINE CITY!"
+
+	para "Follow the path"
+	line "to reach GARNET"
+	cont "CAVERN!"
+
+	para "Go northwest to"
+	line "find BRUNSWICK"
+	cont "GLADE!"
+	done

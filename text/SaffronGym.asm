@@ -72,15 +72,15 @@ _TM46NoRoomText::
 
 _SaffronGymGuidePreBattleText::
 	text "Yo! Champ in"
-	line "making!"
+	line "the making!"
 
 	para "SABRINA's #MON"
 	line "use psychic power"
 	cont "instead of force!"
 
-	para "Fighting #MON"
+	para "FIGHTING-types"
 	line "are weak against"
-	cont "psychic #MON!"
+	cont "psychic power!"
 
 	para "They get creamed"
 	line "before they can"
@@ -129,8 +129,9 @@ _SaffronGymEndBattleText2::
 	prompt
 
 _SaffronGymAfterBattleText2::
-	text "Psychic #MON"
-	line "fear only bugs!" ; changed to the Yellow version because this guy LIES in RGB
+	text "PSYCHIC-types are"
+	line "afraid of DARK-"
+	cont "and BUG-types!"
 	done
 
 _SaffronGymBattleText3::
@@ -249,7 +250,7 @@ _SabrinaRematchPreBattleText::
 	cont "power alone."
 	
 	para "I won't rely on"
-	line "my psychic"
+	line "just my psychic"
 	cont "powers this"
 	cont "time."
 	
@@ -264,6 +265,6 @@ _SabrinaRematchPreBattleText::
 _SabrinaRematchDefeatedText::
 	text "I doubt"
 	line "I'll encounter"
-	cont "a TRAINER like"
+	cont "a trainer like"
 	cont "you ever again."
 	prompt

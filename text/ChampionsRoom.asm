@@ -19,9 +19,11 @@ _GaryChampionIntroText::
 	cont "that would beat"
 	cont "any #MON type!"
 
-	para "And now!"
+	para "And now..."
+	prompt
 
-	para "I'm the #MON"
+_GaryChampionIntroTextPart2::
+	text "I'm the #MON"
 	line "LEAGUE champion!"
 
 	para "<PLAYER>! Do you"
@@ -163,7 +165,7 @@ _BlueRematchAfterBattleText::
 	
 	para "As long as I can"
 	line "battle strong"
-	cont "TRAINERs, I don't"
+	cont "trainers, I don't"
 	cont "care what happens."
 	
 	para "You get what I"

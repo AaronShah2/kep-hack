@@ -41,11 +41,11 @@ _LoreleiRematchText::
 	text "Welcome to the"
 	line "#MON LEAGUE!"
 	
-	para "Hey, fantastic"
-	line "timing! I was"
-	cont "just thinking"
+	para "Fantastic timing!"
+	line "I was thinking"
 	cont "how I'd like to"
-	cont "battle you."
+	cont "battle you just"
+	cont "now."
 	
 	para "I hope you're"
 	line "ready!"
@@ -60,7 +60,7 @@ _LoreleiRematchAfterBattleText::
 	text "I may have lost"
 	line "to you, but I'll"
 	cont "never give up on"
-	cont "ice #MON!"
+	cont "icy #MON!"
 	
 	para "You should aim to"
 	line "win using #MON"

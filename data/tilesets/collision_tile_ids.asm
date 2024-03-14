@@ -47,7 +47,7 @@ Interior_Coll::
 	coll_tiles $04, $0f, $15, $1f, $3b, $45, $47, $55, $56
 
 Cavern_Coll::
-	coll_tiles $05, $15, $18, $1a, $20, $21, $22, $2a, $2d, $30
+	coll_tiles $05, $15, $18, $1a, $20, $21, $22, $2a, $2d, $30, $38
 
 Lobby_Coll::
 	coll_tiles $14, $17, $1a, $1c, $20, $38, $45
@@ -57,6 +57,9 @@ Mansion_Coll::
 
 Lab_Coll::
 	coll_tiles $0c, $26, $16, $1e, $34, $37
+
+FossilLab_Coll:: ; Originally just the Lab collision, but now that Oak uses it, it's using separate collision. Added plenty just to be sure.
+	coll_tiles $0c, $26, $16, $1e, $34, $37, $17, $4C, $47, $58, $57, $59, $27, $4D, $4F
 
 Club_Coll::
 	coll_tiles $0f, $1a, $1f, $26, $28, $29, $2c, $2d, $2e, $2f, $41
@@ -74,7 +77,7 @@ Citrine_Coll::
 	coll_tiles $2C, $31, $3F, $55, $0E, $2F, $23, $20, $10, $03, $1C, $1B, $0B, $0C, $21, $39, $3C, $48, $49, $58, $59
 
 Celeste_Coll::
-	coll_tiles $1e, $20, $2e, $30, $34, $37, $39, $3a, $40, $51, $52, $5a, $5c, $5e, $5f, $09, $08, $18, $19, $0c, $1c
+	coll_tiles $20, $2e, $30, $37, $39, $40, $51, $53, $5a, $5c, $5e, $5f, $09, $08, $18, $19, $0c, $1c
 
 RocketHouse_Coll::
 	coll_tiles $13, $31, $01, $53
@@ -84,3 +87,6 @@ BetaMart_Coll::
 
 Jacky_Coll::
 	coll_tiles $01, $40, $11, $04, $14, $02, $03, $13, $12, 
+
+SeagallopPort_Coll::
+	coll_tiles $1C, $0E, $1E

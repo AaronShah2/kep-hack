@@ -773,6 +773,12 @@ ExtraWarpCheck::
 	jr z, .useFunction2
 	cp SHIP_PORT ; Vermilion Port tileset
 	jr z, .useFunction2
+	cp SEAGALLOPPORT ; Ferry Port tileset
+	jr z, .useFunction2
+	cp CITRINE ; Citrine tileset
+	jr z, .useFunction2
+	cp CELESTE ; Celeste/Faraway tileset
+	jr z, .useFunction2
 	cp PLATEAU ; Indigo Plateau tileset
 	jr z, .useFunction2
 .useFunction1
@@ -1372,7 +1378,7 @@ CheckForTilePairCollisions::
 	jr .retry
 .currentTileMatchesFirstInPair
 	inc hl
-	ld a, [hl]
+	ld a, [hli]
 	cp c
 	jr z, .foundMatch
 	jr .tilePairCollisionLoop
@@ -2076,12 +2082,12 @@ LoadMapHeader::
 	ld a, [wCurMap]
 	call SwitchToMapRomBank
 	ld a, [wCurMapTileset]
-	ld b, a
+	bit 7, a
 	res 7, a
 	ld [wCurMapTileset], a
 	ldh [hPreviousTileset], a
-	bit 7, b
-	ret nz
+;	ret nz		;comment this out so that the header data always loads
+	push af		;preserve the bit check for later to tell if CONTINUE is being selected
 	ld hl, MapHeaderPointers
 	ld a, [wCurMap]
 	sla a
@@ -2139,7 +2145,7 @@ LoadMapHeader::
 	ld [wObjectDataPointerTemp], a
 	ld a, [hli]
 	ld [wObjectDataPointerTemp + 1], a
-	push hl
+;	push hl	; save hl before going to the warp/sign/sprite data (this value is saved for seemingly no purpose)
 	ld a, [wObjectDataPointerTemp]
 	ld l, a
 	ld a, [wObjectDataPointerTemp + 1]
@@ -2147,6 +2153,9 @@ LoadMapHeader::
 	ld de, wMapBackgroundTile
 	ld a, [hli]
 	ld [de], a
+	pop af		;we're done if loading from the CONTINUE option of the main menu
+	ret nz
+	nop	;padding
 .loadWarpData
 	ld a, [hli]
 	ld [wNumberOfWarps], a
@@ -2319,7 +2328,7 @@ LoadMapHeader::
 .finishUp
 	predef LoadTilesetHeader
 	callfar LoadWildData
-	pop hl ; restore hl from before going to the warp/sign/sprite data (this value was saved for seemingly no purpose)
+;	pop hl ; restore hl from before going to the warp/sign/sprite data (this value was saved for seemingly no purpose)
 	ld a, [wCurMapHeight] ; map height in 4x4 tile blocks
 	add a ; double it
 	ld [wCurrentMapHeight2], a ; store map height in 2x2 tile blocks

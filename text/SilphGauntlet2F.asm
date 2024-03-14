@@ -58,8 +58,9 @@ _SilphGauntlet2FAfterBattleText3::
 _SilphGauntlet2FBattleText4::
 	text "Hahaha! This is"
 	line "great! So many"
-	cont "rare #MON! Show"
-	cont "me yours, now!"
+	cont "rare #MON!"
+	para "Show me yours,"
+	line "now!"
 	done
 
 _SilphGauntlet2FEndBattleText4::
@@ -68,14 +69,14 @@ _SilphGauntlet2FEndBattleText4::
 
 _SilphGauntlet2FAfterBattleText4::
 	text "The second I heard"
-	line "of the #MON"
-	cont "I could meet here,"
+	line "of the #MON I"
+	cont "could meet here,"
 	cont "I was stoked!"
 	
 	para "I could never have"
 	line "expected to see"
-	cont "#MON like yours,"
-	cont "though!"
+	cont "#MON like"
+	cont "yours, though!"
 	done
 
 _SilphGauntlet2FBattleText5::

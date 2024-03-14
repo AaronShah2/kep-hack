@@ -113,7 +113,7 @@ MapHeaderPointers::
 	dw SilphGauntlet2F_h
 	dw SilphGauntlet3F_h
 	dw VictoryRoad1F_h
-	dw SilphGauntlet4F_h
+	dw BrunswickGrotto_h
 	dw SilphGauntlet5F_h
 	dw SilphGauntlet6F_h
 	dw SilphGauntlet7F_h
@@ -148,7 +148,7 @@ MapHeaderPointers::
 	dw LavenderPokecenter_h
 	dw PokemonTower1F_h
 	dw PokemonTower2F_h
-	dw BrunswickGrotto_h
+	dw SilphGauntlet4F_h
 	dw CelesteHillGate_h ; was pokemon tower 4f
 	dw PokemonTower5F_h
 	dw PokemonTower6F_h
@@ -235,10 +235,9 @@ MapHeaderPointers::
 	dw CeruleanBadgeHouse_h
 	dw CinnabarVolcano_h ; UNUSED_MAP_E7
 	dw CinnabarVolcanoFloors_h
-	dw SilphCo9F_h
-	dw SilphCo10F_h
+	dw Route10Gate_h
 	dw SilphCo11F_h
-	dw SilphCoElevator_h
+	dw FarawayFerryDock_h
 	dw GarnetCavern2F_h ; UNUSED_MAP_ED, used silph 2f
 	dw UnderwaterTunnel_h ; UNUSED_MAP_EE
 	dw TradeCenter_h

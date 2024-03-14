@@ -11,7 +11,8 @@ BrunswickTrail_ScriptPointers:
 	dw CheckFightingMapTrainers
 	dw DisplayEnemyTrainerTextAndStartBattle
 	dw EndTrainerBattle
-
+	dw HideCactus
+	
 BrunswickTrail_TextPointers:
 	dw FakeTreeEvent
 	dw BrunswickTrainer1
@@ -21,6 +22,8 @@ BrunswickTrail_TextPointers:
 	dw GZapFound
 	dw Lover1
 	dw Lover2
+	dw PickUpItemText
+	dw TrailDirections
 
 BrunswickTrailTrainerHeaders:
 	def_trainers
@@ -100,6 +103,10 @@ CaveGuy:
 	text_far _CaveGuy
 	text_end
 
+TrailDirections:
+	text_far _TrailDirections
+	text_end
+
 FakeTreeNoCut: 
 	text_far _FakeTreeNoCut
 	text_end
@@ -133,7 +140,13 @@ FakeTreeEvent:
 
 	ld hl, CactusTrainerHeader
 	call TalkToTrainer
-	jp TextScriptEnd ; I have tried a lot of things and it's not disappearing AAA
+	
+;let's try a separate map script as a backup in case cactormous does not disappear like other static wild pokemon.
+	ld a, 3
+	ld [wBrunswickTrailCurScript], a
+	ld [wCurMapScript], a
+
+;	jp TextScriptEnd ; I have tried a lot of things and it's not disappearing AAA
 ;.NoCut
 ;	ld hl, FakeTreeNoCut ; Why do you have to be this way? I scream, for I do not know.
 ;	call PrintText
@@ -148,6 +161,19 @@ CactusBattleText:
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
+
+HideCactus:
+;this runs after the cactormous battle to make sure it gets hidden
+	ld a, HS_CACTUS
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	call UpdateSprites
+	call Delay3
+	xor a
+	ld [wBrunswickTrailCurScript], a
+	ld [wCurMapScript], a
+	ret
+
 	
 GZapFound:
 	text_asm

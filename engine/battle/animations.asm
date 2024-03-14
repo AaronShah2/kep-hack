@@ -429,7 +429,15 @@ ShareMoveAnimations:
 	ld a, [wAnimationID]
 
 	cp AMNESIA
-	ld b, CONF_ANIM
+	ld b, AMNESIA_ENEMY_ANIM
+	jr z, .replaceAnim
+	
+	cp NASTY_PLOT
+	ld b, AMNESIA_ENEMY_ANIM
+	jr z, .replaceAnim
+	
+	cp FAKE_TEARS
+	ld b, FAKE_TEARS_ENEMY_ANIM
 	jr z, .replaceAnim
 
 	cp REST
@@ -1853,8 +1861,8 @@ AnimationWavyScreen:
 	ld c, $ff
 	ld hl, WavyScreenLineOffsets
 .loop
-	; ld a, [hl] ; this fixes the wavy screen, but causes a bank overflow
-	; ldh [hSCX], a
+	ld a, [hl] ; this fixes the wavy screen, but causes a bank overflow
+	ldh [hSCX], a
 	push hl
 .innerLoop
 	call WavyScreen_SetSCX
@@ -1871,7 +1879,7 @@ AnimationWavyScreen:
 	dec c
 	jr nz, .loop
 	xor a
-	; ldh [hSCX], a ; also fixing the wavy screen
+	ldh [hSCX], a ; also fixing the wavy screen
 	ldh [hWY], a
 	call SaveScreenTilesToBuffer2
 	call ClearScreen
@@ -2231,6 +2239,10 @@ IsCryMove:
 	cp GROWL
 	jr z, .CryMove
 	cp ROAR
+	jr z, .CryMove
+	cp FAKE_TEARS
+	jr z, .CryMove
+	cp FAKE_TEARS_ENEMY_ANIM
 	jr z, .CryMove
 	and a ; clear carry
 	ret

@@ -43,8 +43,7 @@ HallofFameRoomScript2:
 	ResetEventRange INDIGO_PLATEAU_EVENTS_START, INDIGO_PLATEAU_EVENTS_END, 1
 	xor a
 	ld [wHallOfFameCurScript], a
-	ld hl, FirstMapSpec
-	ld a, [hli]
+	ld a, PALLET_TOWN
 	ld [wLastBlackoutMap], a
 	farcall SaveSAVtoSRAM
 	ld b, 5
@@ -181,7 +180,7 @@ ResetLegendaryPokemon:
 	call ShowThis
 .skipMew
 	CheckEvent EVENT_POST_GAME_ATTAINED
-	jp z, .skipGalarianBirdsAndMewtwo ; If you haven't cleared the game yet, you've not met the Galarian Birds. So we may as well skip processing all this.
+	jp z, .skipGalarianBirdsAndMewtwo
 	ld a, DEX_ARTICUNO_G
 	call HoFIsPokemonBitSet
 	jr nz, .skipArticunoG
@@ -210,6 +209,36 @@ ResetLegendaryPokemon:
 	ld a, HS_MEWTWO
 	call ShowThis
 .skipGalarianBirdsAndMewtwo
+
+	; trade flags are in groups based on the
+	; ordering in data/events/trades.asm
+	; the numbering follows LSB -> MSB
+	; (ie, trades 8 and 9 are the rightmost two bits)
+	
+	; trades 0-7
+	; ld b, %11111111
+	; ld a, [wCompletedInGameTradeFlags]
+	; and b
+	; ld [wCompletedInGameTradeFlags], a
+	
+	; trades 8-15
+	ld b, %00000011
+	ld a, [wCompletedInGameTradeFlags+1]
+	and b
+	ld [wCompletedInGameTradeFlags+1], a
+
+	; trades 16-23
+	ld b, %00000000
+	ld a, [wCompletedInGameTradeFlags+2]
+	and b
+	ld [wCompletedInGameTradeFlags+2], a
+
+	; trades 24-31
+	ld b, %00000000
+	ld a, [wCompletedInGameTradeFlags+3]
+	and b
+	ld [wCompletedInGameTradeFlags+3], a
+
 	; We set this last to save on processing earlier in the script.
 	SetEvent EVENT_POST_GAME_ATTAINED
 	ret
@@ -221,13 +250,13 @@ ShowThis:
 
 ObjectsToShow:
 	db HS_ROUTE_1_OAK ; Oak post-game fight
+	db HS_MORIMOTO ; LGPE Morimoto Boss Fight
 	db -1 ; end
 
 ObjectsToHide:
 	db HS_BILLS_NIDORINO ; Bill's Garden access
 	db HS_MANSION_GUARD ; Pokemon Mansion basement access
 	db HS_MT_MOON_CRATER_GUARD ; Mt. Moon Crater access
-	db HS_CERULEAN_CAVE_GUY ; Cerulean Cave access
 	db -1 ; end
 
 ; Farcalling this caused weird issues so I'm just using a clone

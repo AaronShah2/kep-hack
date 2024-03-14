@@ -60,9 +60,8 @@ ENDM
 .InteriorDoorTileIDs:
 	door_tiles $04, $15
 
-.CitrineDoorTileIDs
+.CitrineDoorTileIDs:
 	door_tiles $1C, $1B, $58, $59
 
-.CelesteDoorTileIDs
+.CelesteDoorTileIDs:
 	door_tiles $0C, $1C
-

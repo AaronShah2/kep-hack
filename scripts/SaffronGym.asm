@@ -47,6 +47,7 @@ SaffronGymReceiveTM46:
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
 	SetEvent EVENT_BEAT_SABRINA
+	ResetEvent EVENT_SS_ANNE_LEFT
 	lb bc, TM_PSYWAVE, 1
 	call GiveItem
 	jr nc, .BagFull
@@ -119,6 +120,7 @@ SabrinaText:
 	ld c, BANK(Music_MeetMaleTrainer)
 	ld a, MUSIC_MEET_MALE_TRAINER
 	call PlayMusic
+	ld hl, wd72d
 	set 6, [hl]
 	set 7, [hl]
 	ldh a, [hSpriteIndex]
@@ -183,7 +185,7 @@ SabrinaPreBattleText:
 
 ReceivedMarshBadgeText:
 	text_far _ReceivedMarshBadgeText
-	sound_get_key_item ; actually plays the second channel of SFX_BALL_POOF due to the wrong music bank being loaded
+	sound_get_key_item
 	text_promptbutton
 	text_end
 

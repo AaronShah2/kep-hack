@@ -225,6 +225,7 @@ BlaineText:
 	ld c, BANK(Music_MeetMaleTrainer)
 	ld a, MUSIC_MEET_MALE_TRAINER
 	call PlayMusic
+	ld hl, wd72d
 	set 6, [hl]
 	set 7, [hl]
 	ldh a, [hSpriteIndex]
@@ -290,8 +291,8 @@ BlainePreBattleText:
 
 ReceivedVolcanoBadgeText:
 	text_far _ReceivedVolcanoBadgeText
-	sound_get_key_item ; actually plays the second channel of SFX_BALL_POOF due to the wrong music bank being loaded
-	text_waitbutton
+	sound_get_key_item
+	text_promptbutton
 	text_end
 
 BlainePostBattleAdviceText:

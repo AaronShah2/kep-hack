@@ -118,6 +118,7 @@ KogaText:
 	ld c, BANK(Music_MeetMaleTrainer)
 	ld a, MUSIC_MEET_MALE_TRAINER
 	call PlayMusic
+	ld hl, wd72d
 	set 6, [hl]
 	set 7, [hl]
 	ldh a, [hSpriteIndex]
@@ -184,6 +185,8 @@ KogaBeforeBattleText:
 
 ReceivedSoulBadgeText:
 	text_far _ReceivedSoulBadgeText
+	sound_get_key_item
+	text_promptbutton
 	text_end
 
 KogaPostBattleAdviceText:
@@ -196,7 +199,7 @@ KogaSoulBadgeInfoText:
 
 ReceivedTM06Text:
 	text_far _ReceivedTM06Text
-	sound_get_key_item
+	sound_get_item_1
 
 TM06ExplanationText:
 	text_far _TM06ExplanationText

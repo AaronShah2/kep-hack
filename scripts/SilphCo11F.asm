@@ -165,24 +165,14 @@ MissableObjectIDs_6219b:
 	db HS_SAFFRON_CITY_E
 	db HS_SILPH_CO_3F_1
 	db HS_SILPH_CO_3F_2
-	;db HS_SILPH_CO_4F_1
-	;db HS_SILPH_CO_4F_2
-	;db HS_SILPH_CO_4F_3
 	db HS_SILPH_CO_5F_1
 	db HS_SILPH_CO_5F_2
 	db HS_SILPH_CO_5F_3
 	db HS_SILPH_CO_5F_4
-	;db HS_SILPH_CO_6F_1
-	;db HS_SILPH_CO_6F_2
-	;db HS_SILPH_CO_6F_3
 	db HS_SILPH_CO_7F_1
 	db HS_SILPH_CO_7F_2
 	db HS_SILPH_CO_7F_3
 	db HS_SILPH_CO_7F_4
-	db HS_SILPH_CO_10F_1
-	db HS_SILPH_CO_10F_2
-	db HS_SILPH_CO_11F_1
-	db HS_SILPH_CO_11F_3
 	db -1 ; end
 
 SilphCo11Script_62185:
@@ -616,6 +606,7 @@ SaffronCityCitizens:
 	db HS_SAFFRON_CITY_B
 	db HS_SAFFRON_CITY_C
 	db HS_SAFFRON_CITY_F
+	db HS_SILPH_CO_1F_RECEPTIONIST
 	db -1 ; end
 
 SaffronCityRockets:
@@ -630,25 +621,14 @@ SaffronCityRockets:
 	db HS_SAFFRON_CITY_E
 	db HS_SILPH_CO_3F_1
 	db HS_SILPH_CO_3F_2
-	;db HS_SILPH_CO_4F_1
-	;db HS_SILPH_CO_4F_2
-	;db HS_SILPH_CO_4F_3
 	db HS_SILPH_CO_5F_1
 	db HS_SILPH_CO_5F_2
 	db HS_SILPH_CO_5F_3
 	db HS_SILPH_CO_5F_4
-	;db HS_SILPH_CO_6F_1
-	;db HS_SILPH_CO_6F_2
-	;db HS_SILPH_CO_6F_3
 	db HS_SILPH_CO_7F_1
 	db HS_SILPH_CO_7F_2
 	db HS_SILPH_CO_7F_3
 	db HS_SILPH_CO_7F_4
-	;db HS_SILPH_CO_8F_1
-	;db HS_SILPH_CO_8F_2
-	;db HS_SILPH_CO_8F_3
-	db HS_SILPH_CO_10F_1
-	db HS_SILPH_CO_10F_2
 	db HS_SILPH_CO_11F_1
 	db HS_SILPH_CO_11F_3
 	db -1 ; end
@@ -667,11 +647,12 @@ SilphCo11F_TextPointers:
 	dw OmegaText
 	dw Omega2Text
 	dw StupidGiovanniFix
+	dw SilphCo11FPorygonText
 
 SilphCo11TrainerHeaders:
 	def_trainers 5
 SilphCo11TrainerHeader0:
-	trainer EVENT_BEAT_SILPH_CO_11F_TRAINER_1, 3, SilphCo11Trainer1BattleText, SilphCo11Trainer1EndBattleText, SilphCo11Trainer1AfterBattleText
+	trainer EVENT_BEAT_SILPH_CO_11F_TRAINER_1, 1, SilphCo11Trainer1BattleText, SilphCo11Trainer1EndBattleText, SilphCo11Trainer1AfterBattleText
 Omega2TrainerHeader:
 	trainer EVENT_BEAT_OMEGA, 0, Omega2BattleText, Omega2BattleText, Omega2BattleText	
 	db -1 ; end
@@ -791,6 +772,9 @@ OmegaText:
 OmegaBattleText:
 	text_far _OmegaBattleText
 	text_asm
+	ld a, OMEGADGE
+	call PlayCry
+	call WaitForSoundToFinish
 	jp TextScriptEnd
 
 Omega2Text:
@@ -809,4 +793,16 @@ Omega2BattleText:
 
 StupidGiovanniFix:
 	text_far _SilphCo10Text_62335
+	text_end
+
+SilphCo11FPorygonText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, PORYGON
+	call DisplayPokedex
+	jp TextScriptEnd
+
+.Text:
+	text_far _SilphCo11FPorygonText
 	text_end

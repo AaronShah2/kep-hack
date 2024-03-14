@@ -10,14 +10,15 @@
 	INCBIN "gfx/pokemon/front/arcanineh.pic", 0, 1 ; sprite dimensions
 	dw ArcanineHPicFront, ArcanineHPicBack
 
-	db ROAR, EMBER, ROCK_THROW, TAKE_DOWN ; level 1 learnset, has rock throw for kicks
+	db BITE, ROAR, ROCK_THROW, NO_MOVE ; level 1 learnset, has rock throw for kicks
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
-	     RAGE,         DRAGON_RAGE,  DIG,          MIMIC,        DOUBLE_TEAM,  \
-	     REFLECT,      BIDE,         FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
-	     REST,         ROCK_SLIDE,   SUBSTITUTE
+	     RAGE,         DRAGON_RAGE,  EARTHQUAKE,   FISSURE,      DIG,          \
+	     TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
+	     FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         ROCK_SLIDE,   \
+	     SUBSTITUTE
 	; end
 
 	db BANK(ArcanineHPicFront)
